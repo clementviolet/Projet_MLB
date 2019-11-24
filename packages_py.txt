@@ -4,5 +4,4 @@ tensorflow
 matplotlib
 pandas
 yellowbrick
-rpy2
 jupyter
