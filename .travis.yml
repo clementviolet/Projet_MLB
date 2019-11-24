@@ -1,0 +1,22 @@
+dist: xenial
+language: python
+python:
+  - "3.6.6"
+
+install:
+  - bootstrap.sh
+
+script:
+  - jupyter nbconvert --to notebook --execute Projet_MLB.ipynb
+  - jupyter nbconvert Projet_MLB.ipynb --to html
+
+before_deploy:
+   - mv Projet_MLB.html index.html
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep_history: true
+  github_token: $GITHUB_TOKEN
+  on:
+     all_branches: true
