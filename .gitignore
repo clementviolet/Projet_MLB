@@ -1,0 +1,11 @@
+.Rproj.user
+.*Rproj
+.Rhistory
+.RData
+.Ruserdata
+.vscode
+__pycache__
+.DS_Store
+projet_MLB.zip.toto
+script.R
+script.py
