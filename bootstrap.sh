@@ -7,7 +7,7 @@ sudo apt update
 # Install R and R packages
 echo Install R and R packages
 
-sudo apt-get install -y r-base
+sudo apt-get install -y r-base-core=3.5.2-1xenial0
 sudo Rscript -e "install.packages(c(\"missMDA\", \"readr\", \"forcats\"), repos = \"http://cran.us.r-project.org\")"
 sudo Rscript ./script.R
 
