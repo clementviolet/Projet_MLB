@@ -1,4 +1,5 @@
-library(tidyverse)
+library(readr)
+library(forcats)
  library(missMDA)
 
  set.seed(42)

@@ -6,7 +6,7 @@ sudo apt-get update
 echo Install R and R packages
 
 sudo apt-get install -y r-base
-sudo Rscript -e "install.packages(c(\"missMDA\", \"tidyverse\"), repos = \"http://cran.us.r-project.org\")"
+sudo Rscript -e "install.packages(c(\"missMDA\", \"readr\", \"forcats\"), repos = \"http://cran.us.r-project.org\")"
 sudo Rscript ./script.R
 
 # Install Python packages
