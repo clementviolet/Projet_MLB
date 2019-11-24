@@ -2,7 +2,6 @@ sklearn
 keras
 tensorflow
 matplotlib
-numpy
 pandas
 yellowbrick
 rpy2
