@@ -26,3 +26,5 @@ library(tidyverse)
    as.data.frame() %>%
    {imputeFAMD(., ncp = 5)$completeObs} %>%
    as.data.frame()
+
+write.csv(data, file = "complet_data.csv")
