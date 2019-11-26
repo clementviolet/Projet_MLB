@@ -13017,6 +13017,45 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    
+/* Temporary definitions which will become obsolete with Notebook release 5.0 */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-bold { font-weight: bold; }
+
+    </style>
 
 
 <style type="text/css">
@@ -13076,7 +13115,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span>  <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13084,7 +13123,7 @@ div#notebook {
 <span class="kn">import</span>  <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span>  <span class="nn">sklearn.linear_model</span> <span class="k">import</span>  <span class="n">SGDRegressor</span> <span class="c1">#Stochastic Gradient Descent Regressor</span>
 <span class="kn">from</span>  <span class="nn">sklearn.preprocessing</span> <span class="k">import</span>  <span class="n">PolynomialFeatures</span>
-<span class="kn">import</span> <span class="nn">outilsReg</span> <span class="k">as</span> <span class="nn">reg</span>
+<span class="kn">import</span> <span class="nn">outilsRegc</span> <span class="k">as</span> <span class="nn">reg</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">random</span> <span class="k">as</span> <span class="n">rd</span>
 </pre></div>
 
@@ -13092,28 +13131,10 @@ div#notebook {
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Using TensorFlow backend.
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span>    <span class="c1">#matplotlib inline </span>
@@ -13128,10 +13149,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">base</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./complet_data.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">base</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data.csv&quot;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">decimal</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13141,7 +13162,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">base</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -13151,10 +13172,314 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[85]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>population</th>
+      <th>householdsize</th>
+      <th>racepctblack</th>
+      <th>racePctWhite</th>
+      <th>racePctAsian</th>
+      <th>racePctHisp</th>
+      <th>agePct12t21</th>
+      <th>agePct12t29</th>
+      <th>agePct16t24</th>
+      <th>agePct65up</th>
+      <th>...</th>
+      <th>burglaries</th>
+      <th>burglPerPop</th>
+      <th>larcenies</th>
+      <th>larcPerPop</th>
+      <th>autoTheft</th>
+      <th>autoTheftPerPop</th>
+      <th>arsons</th>
+      <th>arsonsPerPop</th>
+      <th>ViolentCrimesPerPop</th>
+      <th>nonViolPerPop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>11980</td>
+      <td>3.10</td>
+      <td>1.37</td>
+      <td>91.78</td>
+      <td>6.50</td>
+      <td>1.88</td>
+      <td>12.47</td>
+      <td>21.44</td>
+      <td>10.93</td>
+      <td>11.33</td>
+      <td>...</td>
+      <td>14.0</td>
+      <td>114.85</td>
+      <td>138.0</td>
+      <td>1132.08</td>
+      <td>16.0</td>
+      <td>131.26</td>
+      <td>2.000000</td>
+      <td>16.41000</td>
+      <td>41.020000</td>
+      <td>1394.590000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>23123</td>
+      <td>2.82</td>
+      <td>0.80</td>
+      <td>95.57</td>
+      <td>3.44</td>
+      <td>0.85</td>
+      <td>11.01</td>
+      <td>21.30</td>
+      <td>10.48</td>
+      <td>17.18</td>
+      <td>...</td>
+      <td>57.0</td>
+      <td>242.37</td>
+      <td>376.0</td>
+      <td>1598.78</td>
+      <td>26.0</td>
+      <td>110.55</td>
+      <td>1.000000</td>
+      <td>4.25000</td>
+      <td>127.560000</td>
+      <td>1955.950000</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>29344</td>
+      <td>2.43</td>
+      <td>0.74</td>
+      <td>94.33</td>
+      <td>3.43</td>
+      <td>2.35</td>
+      <td>11.36</td>
+      <td>25.88</td>
+      <td>11.01</td>
+      <td>10.28</td>
+      <td>...</td>
+      <td>274.0</td>
+      <td>758.14</td>
+      <td>1797.0</td>
+      <td>4972.19</td>
+      <td>136.0</td>
+      <td>376.30</td>
+      <td>22.000000</td>
+      <td>60.87000</td>
+      <td>218.590000</td>
+      <td>6167.510000</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>16656</td>
+      <td>2.40</td>
+      <td>1.70</td>
+      <td>97.35</td>
+      <td>0.50</td>
+      <td>0.70</td>
+      <td>12.55</td>
+      <td>25.20</td>
+      <td>12.19</td>
+      <td>17.57</td>
+      <td>...</td>
+      <td>225.0</td>
+      <td>1301.78</td>
+      <td>716.0</td>
+      <td>4142.56</td>
+      <td>47.0</td>
+      <td>271.93</td>
+      <td>1.318981</td>
+      <td>41.68308</td>
+      <td>306.640000</td>
+      <td>6135.400582</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>11245</td>
+      <td>2.76</td>
+      <td>0.53</td>
+      <td>89.16</td>
+      <td>1.17</td>
+      <td>0.52</td>
+      <td>24.46</td>
+      <td>40.53</td>
+      <td>28.69</td>
+      <td>12.65</td>
+      <td>...</td>
+      <td>91.0</td>
+      <td>728.93</td>
+      <td>1060.0</td>
+      <td>8490.87</td>
+      <td>91.0</td>
+      <td>728.93</td>
+      <td>5.000000</td>
+      <td>40.05000</td>
+      <td>829.026006</td>
+      <td>9988.790000</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>140494</td>
+      <td>2.45</td>
+      <td>2.51</td>
+      <td>95.65</td>
+      <td>0.90</td>
+      <td>0.95</td>
+      <td>18.09</td>
+      <td>32.89</td>
+      <td>20.04</td>
+      <td>13.26</td>
+      <td>...</td>
+      <td>2094.0</td>
+      <td>1386.46</td>
+      <td>7690.0</td>
+      <td>5091.64</td>
+      <td>454.0</td>
+      <td>300.60</td>
+      <td>134.000000</td>
+      <td>88.72000</td>
+      <td>442.950000</td>
+      <td>6867.420000</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>28700</td>
+      <td>2.60</td>
+      <td>1.60</td>
+      <td>96.57</td>
+      <td>1.47</td>
+      <td>1.10</td>
+      <td>11.17</td>
+      <td>27.41</td>
+      <td>12.76</td>
+      <td>14.42</td>
+      <td>...</td>
+      <td>110.0</td>
+      <td>372.09</td>
+      <td>288.0</td>
+      <td>974.19</td>
+      <td>144.0</td>
+      <td>487.10</td>
+      <td>17.000000</td>
+      <td>57.50000</td>
+      <td>226.630000</td>
+      <td>1890.880000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>59459</td>
+      <td>2.45</td>
+      <td>14.20</td>
+      <td>84.87</td>
+      <td>0.40</td>
+      <td>0.63</td>
+      <td>15.31</td>
+      <td>27.93</td>
+      <td>14.78</td>
+      <td>14.60</td>
+      <td>...</td>
+      <td>608.0</td>
+      <td>997.60</td>
+      <td>2250.0</td>
+      <td>3691.79</td>
+      <td>125.0</td>
+      <td>205.10</td>
+      <td>9.000000</td>
+      <td>14.77000</td>
+      <td>439.730000</td>
+      <td>4909.260000</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>74111</td>
+      <td>2.46</td>
+      <td>0.35</td>
+      <td>97.11</td>
+      <td>1.25</td>
+      <td>0.73</td>
+      <td>16.64</td>
+      <td>35.16</td>
+      <td>20.33</td>
+      <td>8.58</td>
+      <td>...</td>
+      <td>425.0</td>
+      <td>532.66</td>
+      <td>3149.0</td>
+      <td>3946.71</td>
+      <td>206.0</td>
+      <td>258.18</td>
+      <td>8.000000</td>
+      <td>10.03000</td>
+      <td>115.310000</td>
+      <td>4747.580000</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>103590</td>
+      <td>2.62</td>
+      <td>23.14</td>
+      <td>67.60</td>
+      <td>0.92</td>
+      <td>16.35</td>
+      <td>19.88</td>
+      <td>34.55</td>
+      <td>21.62</td>
+      <td>13.12</td>
+      <td>...</td>
+      <td>2397.0</td>
+      <td>2221.81</td>
+      <td>6121.0</td>
+      <td>5673.63</td>
+      <td>1070.0</td>
+      <td>991.80</td>
+      <td>18.000000</td>
+      <td>16.68000</td>
+      <td>1544.240000</td>
+      <td>8903.930000</td>
+    </tr>
+  </tbody>
+</table>
+<p>10 rows × 142 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">boolViolence</span> <span class="o">=</span> <span class="p">(</span><span class="n">base</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="s1">&#39;ViolentCrimesPerPop&#39;</span><span class="p">)</span>
@@ -13168,7 +13493,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">boolViolence</span>
@@ -13178,10 +13503,45 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[87]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False,  True, False])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">yVar</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">boolViolence</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -13194,7 +13554,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">yVar</span>
@@ -13204,10 +13564,36 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[89]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 41.02],
+       [127.56],
+       [218.59],
+       ...,
+       [353.83],
+       [691.17],
+       [918.89]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">XVar</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">boolPred</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -13220,13 +13606,33 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">XVar</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[91]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(2215, 141)</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13246,7 +13652,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">echanTrain</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="n">size</span><span class="o">=</span><span class="n">XVar</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">replace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">])</span>
@@ -13259,7 +13665,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#theta = rd.randn(1+XVar.shape[1])</span>
@@ -13279,7 +13685,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">modele</span> <span class="o">=</span> <span class="n">reg</span><span class="o">.</span><span class="n">modelisation</span><span class="p">(</span><span class="n">yVar</span><span class="p">[</span><span class="n">echanTrain</span><span class="o">==</span><span class="mi">1</span><span class="p">,:],</span> <span class="n">XVar</span><span class="p">[</span><span class="n">echanTrain</span><span class="o">==</span><span class="mi">1</span><span class="p">,:])</span>
@@ -13292,13 +13698,39 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">yVar</span><span class="p">[</span><span class="n">echanTrain</span><span class="o">==</span><span class="mi">1</span><span class="p">,:]</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[95]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[ 41.02],
+       [218.59],
+       [306.64],
+       ...,
+       [353.83],
+       [691.17],
+       [918.89]])</pre>
+</div>
+
+</div>
+
 </div>
 </div>
 
@@ -13318,7 +13750,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">modele</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -13328,10 +13760,112 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1524/1524 [==============================] - 1s 379us/step - loss: 24033881180477.1445
+Epoch 2/20
+1524/1524 [==============================] - 0s 22us/step - loss: 18838741777227.9258
+Epoch 3/20
+1524/1524 [==============================] - 0s 18us/step - loss: 14607613429088.0840
+Epoch 4/20
+1524/1524 [==============================] - 0s 16us/step - loss: 10593068188164.0312
+Epoch 5/20
+1524/1524 [==============================] - 0s 18us/step - loss: 7480195026632.2305
+Epoch 6/20
+1524/1524 [==============================] - 0s 22us/step - loss: 5572260937857.0068
+Epoch 7/20
+1524/1524 [==============================] - 0s 27us/step - loss: 4030596555160.5249
+Epoch 8/20
+1524/1524 [==============================] - 0s 23us/step - loss: 2433986481477.2075
+Epoch 9/20
+1524/1524 [==============================] - 0s 24us/step - loss: 1601711789397.3335
+Epoch 10/20
+1524/1524 [==============================] - 0s 24us/step - loss: 1043807092499.4856
+Epoch 11/20
+1524/1524 [==============================] - 0s 19us/step - loss: 614589731896.4409
+Epoch 12/20
+1524/1524 [==============================] - 0s 27us/step - loss: 340045127400.4829
+Epoch 13/20
+1524/1524 [==============================] - 0s 26us/step - loss: 200620569704.8189
+Epoch 14/20
+1524/1524 [==============================] - 0s 17us/step - loss: 120901548961.9317
+Epoch 15/20
+1524/1524 [==============================] - 0s 21us/step - loss: 61151344078.2782
+Epoch 16/20
+1524/1524 [==============================] - 0s 23us/step - loss: 41437302493.7323
+Epoch 17/20
+1524/1524 [==============================] - 0s 20us/step - loss: 27573815855.0341
+Epoch 18/20
+1524/1524 [==============================] - 0s 20us/step - loss: 19670010530.6037
+Epoch 19/20
+1524/1524 [==============================] - 0s 16us/step - loss: 17988982668.4304
+Epoch 20/20
+1524/1524 [==============================] - 0s 17us/step - loss: 16769961970.5617
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[96]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([572.430855  , 623.30978986]),
+ LinearRegression(copy_X=True, fit_intercept=True, n_jobs=None, normalize=False),
+ DecisionTreeRegressor(criterion=&#39;mse&#39;, max_depth=None, max_features=None,
+                       max_leaf_nodes=None, min_impurity_decrease=0.0,
+                       min_impurity_split=None, min_samples_leaf=1,
+                       min_samples_split=2, min_weight_fraction_leaf=0.0,
+                       presort=False, random_state=None, splitter=&#39;best&#39;),
+ BaggingRegressor(base_estimator=None, bootstrap=True, bootstrap_features=False,
+                  max_features=1.0, max_samples=1.0, n_estimators=10,
+                  n_jobs=None, oob_score=False, random_state=None, verbose=0,
+                  warm_start=False),
+ RandomForestRegressor(bootstrap=True, criterion=&#39;mse&#39;, max_depth=None,
+                       max_features=&#39;auto&#39;, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=10,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False),
+ &lt;keras.callbacks.callbacks.History at 0x23acefe4978&gt;)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">modele</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">XVar</span><span class="p">[</span><span class="n">echanTrain</span><span class="o">==</span><span class="mi">0</span><span class="p">,:])</span>
@@ -13341,10 +13875,1067 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[97]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([-2.77833072e+02, -4.01525367e+02,  7.16047017e+02, -3.20146534e+02,
+         7.77867642e+02,  9.61363159e+02,  9.64796891e+02, -7.93371795e+01,
+         1.26739802e+03, -1.12304256e+02,  1.48810523e+03, -7.23532222e+02,
+         4.50382399e+02,  1.68853729e+02,  7.49863917e+02,  1.17122958e+03,
+         9.68228308e+02,  6.14247991e+02,  1.16956684e+03,  5.15153977e+02,
+         1.80756427e+03,  2.18443239e+02,  5.53272664e+02, -9.83192096e+00,
+         9.70505957e+02,  8.39486320e+02,  1.53778158e+03,  5.41619224e+02,
+         1.61356204e+02,  2.05463204e+02,  4.40953484e+02,  4.32708377e+02,
+         8.35968582e+02,  3.62723028e+02,  8.87735169e+02,  1.90679900e+03,
+         4.23117454e+02,  7.74940689e+02,  8.92259316e+02, -1.09743639e+02,
+         3.10105934e+02,  6.22136951e+01, -5.68506430e+01,  1.03231267e+03,
+         7.65791975e+02, -4.50227315e+02,  2.77537104e+02,  1.27262524e+03,
+         1.10413995e+03, -3.15815573e+02, -3.29355450e+02,  8.74575355e+02,
+         1.16559369e+03,  9.31889453e+02,  6.92432686e+02,  2.17526243e+03,
+        -4.31103635e+02,  1.15351308e+03,  1.05312275e+03, -1.93009351e+01,
+        -6.21055024e+00,  5.98084429e+02, -8.37023003e+01,  7.66617375e+02,
+         2.80174891e+02,  1.14180896e+03,  8.25690482e+02,  8.13488965e+02,
+         5.67364117e+02,  5.39997826e+02,  3.46127197e+02,  1.07674219e+03,
+         9.20590468e+00,  8.34692109e+02,  1.80194761e+02,  6.84162093e+02,
+         1.00697509e+03,  1.35481424e+03, -3.61665625e+02, -2.90192801e+02,
+         1.20854573e+02,  1.33361382e+03,  1.49587950e+03,  2.18538607e+02,
+         5.74163872e+02, -7.34293825e+01,  7.96141241e+02, -2.95633232e+02,
+         1.01418531e+03,  8.59326821e+02,  1.18127343e+03, -1.52851093e+02,
+         1.70192459e+03,  9.06216797e+02,  7.42451067e+02,  2.54668221e+02,
+         2.32734817e+02,  1.06437989e+02, -5.25734671e+01,  1.03774960e+03,
+        -2.11934177e+02, -2.52667819e+02,  1.16003520e+03,  4.03025625e+02,
+         2.88637135e+02,  1.72805689e+03,  1.91521372e+03,  2.90321457e+02,
+         1.39541631e+03,  9.97919428e+02,  8.75278275e+02, -2.09638505e+02,
+        -2.74028010e+02,  7.74716530e+02,  5.09079567e+02,  3.24639525e+02,
+         5.01877591e+02,  5.67467417e+02,  1.51824662e+03, -3.81090231e+02,
+         2.86957426e+02, -3.05335712e+01,  8.74422020e+02,  1.39607237e+03,
+         4.82069871e+02, -3.55374514e+02, -9.34697729e+01,  1.88376023e+02,
+         1.72924633e+02,  1.91117092e+02,  2.02362821e+02,  6.12572523e+02,
+         1.11585336e+03, -7.61871886e+02,  7.13271830e+02,  7.75848014e+02,
+        -7.45521626e+02,  1.01604189e+03,  4.26441220e+02,  4.59651689e+02,
+         6.22852558e+02,  7.54023175e+02,  3.61283106e+02,  3.49332119e+02,
+        -2.78539586e+02,  4.19303508e+02,  1.43999018e+03,  7.67676411e+02,
+        -5.75472166e+01,  4.25429896e+02,  1.92282315e+03,  6.12885567e+02,
+         6.07138048e+02, -2.81758243e+02,  7.62445221e+02,  1.98847198e+02,
+         6.67575993e+02,  2.03132144e+03,  1.15201064e+03,  4.86074319e+02,
+         1.34547632e+03,  1.05038811e+03, -3.10863227e+02,  1.14152111e+02,
+         2.86893947e+02,  2.93387668e+03, -2.61083500e+02,  1.11087019e+03,
+        -1.29001124e+02,  3.31042066e+02,  1.47313526e+02,  8.20627963e+02,
+         7.40574200e+02, -8.78975164e+01, -6.18960549e+02,  9.64896443e+02,
+        -1.30319997e+02, -1.02297714e+03,  2.32415397e+02, -5.03158011e+02,
+         6.29194632e+02,  1.12683753e+03,  5.07704400e+02,  1.79303664e+03,
+         2.22959935e+02,  2.86683238e+02,  6.36388687e+01,  6.86494525e+02,
+         7.93734438e+02,  3.14910710e+00, -1.69707310e+02,  9.93527461e+02,
+         1.21256326e+02,  5.55512217e+02,  1.09780022e+03,  7.31748324e+02,
+         6.76212177e+02,  1.01354605e+03, -2.68268861e+01,  6.09473649e+02,
+         1.50699629e+03, -1.61575552e+02, -1.05566193e+03,  6.85381932e+02,
+         1.29466179e+03,  1.28610423e+03,  3.28081694e+02,  3.35899159e+02,
+        -5.30884864e+02,  3.26936515e+02,  3.14717419e+02,  6.32623881e+02,
+         1.98256245e+02,  6.18350361e+01,  1.01911062e+02, -3.53803790e+02,
+         5.75742402e+02,  7.34871970e+02, -1.99756727e+01,  1.72718980e+03,
+         1.31137130e+03,  1.70522145e+03,  8.94143821e+02,  7.51911707e+02,
+         7.77654384e+01,  9.67260463e+02,  2.21214466e+02,  1.26005266e+03,
+         1.50546411e+02,  3.36843706e+02,  1.00712266e+03,  6.62664813e+02,
+         1.18307341e+02, -1.97958583e+02,  1.56934073e+03,  1.00112558e+02,
+         4.28245128e+02,  1.19382798e+03, -5.98960759e+02,  9.05585237e+02,
+         5.46203635e+00,  5.56714700e+02,  9.17331946e+02, -2.83386151e+02,
+         5.22550090e+02,  5.58031572e+02,  1.42247395e+03,  3.84253758e+02,
+         3.61777855e+02,  7.09439025e+02,  5.99859783e+02,  1.70714025e+02,
+         3.41032230e+02,  1.07833791e+03,  6.16313953e+02,  1.02538432e+03,
+         1.09887855e+03,  7.25592331e+02,  4.20534454e+02,  2.45798680e+03,
+         6.43953632e+02,  5.87609839e+02,  1.84612024e+03, -2.92452030e+02,
+        -3.81488172e+02, -2.28861528e+02,  1.38696980e+03,  1.64522303e+03,
+         7.68487058e+02,  2.81781500e+02, -4.82869931e+02, -5.54520137e+02,
+         6.06978759e+01,  1.89509332e+03,  1.92629252e+03,  6.54639679e+00,
+         6.42577356e+02,  8.25014333e+02, -4.17670117e+02,  5.34569385e+02,
+         1.37727522e+03,  2.83135948e+02,  1.06349269e+03,  8.61890371e+02,
+        -2.72937985e+02,  1.72910595e+02,  2.37645456e+01, -4.13830030e+02,
+         1.17881155e+03,  2.47776479e+02,  8.45086065e+02,  1.24494594e+03,
+         4.75893819e+02,  4.01446980e+02,  4.26595158e+02, -3.59388317e+02,
+         6.24659883e+02,  5.12200880e+02,  8.50638383e+02,  1.84440488e+02,
+         4.78271199e+02,  4.97916946e+02,  1.73470262e+03,  1.33739533e+03,
+        -3.56243491e+02,  7.45944783e+02,  1.27907512e+03,  1.72365711e+03,
+        -7.11917613e+01,  1.42816688e+03,  9.14237588e+02,  6.54851318e+02,
+        -1.20231558e+02,  1.13594383e+03,  5.64168639e+02,  1.09558934e+03,
+         6.39620954e+02, -8.52519314e+00,  1.02277600e+02,  9.47605852e+02,
+         9.51544144e+02,  5.82409852e+02,  3.64267812e+02,  5.71489621e+02,
+         2.75128699e+02, -1.29076494e+01,  2.80260909e+01,  2.56288889e+02,
+         9.06147786e+02,  4.03001630e+02,  7.85154086e+02,  1.00308043e+03,
+         8.01409776e+02,  8.69705293e+02,  1.03590427e+03,  7.28328656e+02,
+         7.67110780e+02,  4.08781972e+02,  1.36545257e+03,  7.62379233e+02,
+         8.77476217e+02,  8.58144323e+02,  9.76052280e+02,  9.12256533e+02,
+        -3.76973924e+02,  2.03079396e+02,  1.09072091e+03,  9.97972776e+02,
+         1.64937754e+02,  2.51489834e+02,  3.09870116e+01,  5.43481046e+02,
+         6.25521479e+02,  1.52908122e+02,  5.18394470e+02,  6.81244786e+02,
+         1.14800356e+03,  1.91972541e+02, -8.00945612e+02,  7.00658561e+02,
+         1.07044113e+03, -4.75884972e-01,  1.60809767e+02,  9.73388598e+02,
+         9.38501597e+01,  4.83033523e+02,  6.13047114e+02, -6.25666267e+02,
+         1.69278453e+02,  1.16028066e+03,  7.15557789e+02,  9.68710292e+02,
+         9.37531993e+02,  4.83356427e+02,  1.79684175e+03,  1.74107185e+03,
+         5.63726077e+02,  3.61365495e+02,  1.20818066e+03, -2.19680724e+02,
+         1.21821443e+03,  1.51981314e+02,  1.86395898e+03,  3.48235102e+02,
+        -1.26252365e+02,  9.24428285e+02,  3.00221071e+02,  2.38140532e+02,
+         3.53984732e+02,  5.56220157e+02,  1.24821869e+03,  1.01714039e+03,
+        -3.75950187e+02,  4.91841537e+02,  3.47417447e+02,  1.03890714e+03,
+         1.51625366e+02,  4.56927240e+02,  1.44879610e+03, -8.25150624e+02,
+         6.97997690e+02,  1.16138683e+03,  1.41307582e+03,  2.81642193e+02,
+         1.04019838e+03,  1.19364173e+03,  4.38720887e+02,  1.12205458e+03,
+         1.50875040e+02,  7.63948711e+02, -1.00209689e+02,  2.20892400e+02,
+        -2.54502085e+02,  4.72791904e+01, -2.29113260e+02,  1.20528738e+03,
+         7.74543744e+02,  8.16773507e+02,  1.23274413e+03,  5.86361454e+02,
+         2.83783371e+02, -2.84132895e+02,  1.64252701e+02,  7.80125619e+02,
+        -1.05833454e+03, -2.22626343e+02,  3.53612771e+02,  5.18860138e+02,
+         6.97044964e+02,  8.80699127e+02,  1.11949383e+03, -1.21968824e+02,
+         5.03959034e+02, -2.23352431e+02,  8.81590723e+02,  8.39705215e+02,
+         1.16806316e+03, -1.61709955e+02,  2.96526241e+02,  1.79873498e+02,
+         2.36652541e+03,  7.15802197e+02,  3.92934425e+02,  8.28350918e+02,
+         6.72369352e+02,  7.61771789e+02,  1.13812363e+03,  4.57601150e+02,
+         1.19809850e+03, -2.07361638e+02,  2.36105085e+03,  2.54687154e+02,
+         5.24901220e+02,  3.32826053e+00,  9.51511204e+02, -2.77716813e+02,
+         1.51043020e+03, -3.05585891e+02,  3.84810057e+02,  1.27662021e+03,
+         1.50851893e+03,  1.24048846e+03,  2.28681308e+03,  5.67490114e+02,
+         6.59936546e+02,  7.98769496e+02,  9.98841411e+02,  1.33080348e+03,
+        -1.80740826e+01,  1.11908178e+03,  3.00246594e+02,  4.74572739e+02,
+         7.33579084e+01, -8.74940710e+02,  9.20092504e+02,  5.88526688e+02,
+         8.52570877e+02,  2.58043562e+02,  3.79586571e+02, -8.56983095e+01,
+        -1.97765422e+02,  1.56110613e+03,  1.56117396e+03,  5.00680880e+02,
+         3.57047175e+01,  1.36026105e+03,  7.66006880e+01,  1.77304274e+03,
+         1.02536625e+03, -4.72806397e+02, -2.78182066e+02,  1.40202220e+03,
+         6.05687113e+02,  4.19197057e+02,  3.67784316e+02, -1.03202139e+03,
+         4.52751894e+02,  6.88000116e+02,  1.76874197e+03,  9.78917664e+02,
+         1.84824553e+02,  1.37600837e+02,  4.27142287e+02, -2.80988072e+02,
+         1.02393916e+03,  7.04845561e+02,  1.47226755e+03,  2.72454624e+02,
+         8.70532781e+02,  2.48238780e+02,  1.30732278e+03,  5.67543212e+02,
+         5.76778632e+02,  1.93054072e+02, -2.78195394e+02,  2.26342121e+02,
+        -2.79507977e+02,  4.91523251e+02,  4.35858670e+02, -1.47035922e+03,
+        -5.94875467e+02, -5.75078593e+02,  8.11414018e+02,  1.13283957e+03,
+         1.16371366e+03,  1.11171592e+03,  1.11782543e+03,  9.34176304e+02,
+         1.45957406e+03,  4.08666024e+01,  5.13604665e+02,  1.31420947e+02,
+         7.27739673e+02,  7.28646172e+02,  7.68783799e+02,  4.14368218e+02,
+        -1.04562040e+02,  3.60810056e+02,  1.58396181e+03,  3.10938912e+02,
+         7.28701215e+02,  1.32195977e+03,  3.13053869e+02,  5.28102623e+02,
+         8.96855811e+02,  2.93599255e+02,  8.12296295e+02, -4.08935970e+02,
+         3.46141490e+01,  1.27694247e+03, -4.41869675e+02,  2.80014719e+01,
+         2.60981730e+02,  7.69536250e+02,  4.92827799e+02,  6.49178032e+02,
+         1.33270859e+03,  1.43876531e+03,  1.76789916e+03,  7.67096145e+02,
+        -1.66192155e+02,  8.97940988e+02, -6.07020518e+01, -2.48708738e+02,
+         4.04666500e+02,  1.70888059e+03,  5.24473671e+02,  1.55385943e+00,
+        -2.44110200e+02, -3.55130137e+02,  8.27137474e+02,  1.32208603e+03,
+         3.81796305e+02, -1.76457624e+02, -3.28173032e+02, -2.96029920e+02,
+         8.76547917e-01,  7.23370477e+02, -4.02796189e+01,  4.11116605e+02,
+         5.79400065e+01,  8.21093758e+02,  4.25985360e+02,  9.62403248e+02,
+         7.74384908e+02,  6.60394552e+02,  8.58672942e+02,  1.88288115e+02,
+         2.84375172e+02,  1.56606999e+02, -1.97066529e+02,  2.50414646e+02,
+        -8.24158020e+02,  4.45186771e+02,  7.39693167e+01,  8.90533985e+02,
+         5.65514752e+02,  1.62025766e+03,  1.53067184e+03,  5.70592462e+02,
+         1.44995939e+03,  8.64262807e+02,  5.82028757e+02, -5.08603761e+01,
+         7.55231453e+02,  9.93421536e+02,  1.43704078e+03,  4.85440383e+02,
+         1.26563168e+03,  1.58478930e+03,  5.04209936e+02,  1.52521713e+03,
+         4.79518823e+02,  8.32008227e+02,  4.62629956e+02, -1.60664942e+02,
+         1.34801286e+03,  5.12259082e+02, -5.77241427e+02, -9.34856294e+00,
+        -1.62476196e+02,  8.93651945e+02,  4.70285146e+02,  1.91866007e+02,
+        -3.08029656e+02,  2.46187868e+02, -5.79191594e+02,  1.27266308e+03,
+         1.08685289e+03,  7.29890640e+02,  1.02491055e+03,  1.28114850e+03,
+         1.16176277e+03, -3.77625609e+02,  8.45983856e+02,  1.66790274e+02,
+         1.30214675e+02,  8.15844736e+02,  5.18455258e+02,  1.01885591e+03,
+         2.59920841e+02,  8.87403997e+02,  9.64504794e+02,  4.94710335e+02,
+         7.57411376e+02,  1.17744320e+03,  1.41101163e+02,  1.78633182e+01,
+         2.45374999e+02,  3.15722892e+02,  2.11910247e+02,  5.38632654e+02,
+         1.04657818e+03,  1.30046027e+03,  1.80810714e+03,  6.38298609e+02,
+        -6.57505208e+02,  1.33967955e+03, -7.98072635e+02,  6.95162887e+02,
+         3.12265387e+02,  1.91493865e+01,  6.35221982e+02,  7.10990145e+02,
+         7.47270637e+02,  9.95959792e+02,  7.26754435e+02,  1.04253021e+03,
+         7.26665473e+02,  6.04478175e+02,  2.43695968e+02,  7.08441419e+02,
+        -3.28371607e+02,  8.73284478e+01,  5.91267298e+02,  1.09696741e+03,
+         6.05894859e+02,  8.81735081e+02,  9.23110809e+02,  2.89456880e+02,
+         7.75634245e+02, -6.87615259e+01,  6.47811243e+02, -2.54281550e+02,
+         1.09377034e+02, -2.32886128e+02,  2.97846215e+02,  8.92498414e+02,
+         1.30805538e+03, -6.62786074e+02,  1.27083724e+03]),
+ array([ 1.56103617e+02,  4.26557044e+02,  4.23672628e+02,  8.21547020e+02,
+         1.25331676e+02,  2.29166393e+02,  1.05288106e+02,  2.88916152e+03,
+         2.49136367e+02,  1.05787408e+03,  1.26586019e+03,  7.84537168e+02,
+         2.95443228e+02,  1.73186019e+03,  7.64148484e+02,  1.47522793e+02,
+         1.27420426e+02,  1.07475812e+03,  1.10722899e+02,  1.54288692e+02,
+         8.56819664e+01,  5.11321254e+02,  1.60845006e+03,  5.02586006e+02,
+         5.54904076e+01,  1.24172407e+02,  2.50061926e+02,  8.91827682e+02,
+         2.40086671e+02, -3.10057862e+01,  1.64634943e+03,  3.22328717e+02,
+         9.22403153e+02,  5.06961181e+02,  1.70824991e+02,  6.56104777e+01,
+         7.79378253e+02,  3.97227173e+02,  8.20280708e+01,  2.75721616e+02,
+         3.28265026e+02,  1.03061489e+02,  1.87297778e+02,  5.60161300e+02,
+         1.30553309e+02,  2.16328995e+02,  1.08177330e+03,  3.84073507e+02,
+         2.32662413e+02,  1.39337261e+03,  1.47964471e+02,  2.66910583e+03,
+         1.21673061e+02,  1.40273069e+03,  3.67979191e+02,  4.35536109e+02,
+         8.52298039e+02,  3.71293512e+02,  3.01830303e+03,  2.46186554e+02,
+         5.99535787e+01,  4.40821433e+02,  6.46264609e+02,  8.53241373e+02,
+         1.44544412e+03,  2.84261591e+02,  4.26835222e+01,  1.24713826e+03,
+         5.88381861e+02,  3.31022317e+02,  5.60799789e+02,  3.81873572e+02,
+         1.30799610e+03, -1.52130766e+01,  2.61563171e+02,  8.94512491e+01,
+         5.66523503e+02,  5.80565457e+02,  5.80654543e+01,  6.70656021e+01,
+         1.50027872e+02,  1.01930177e+03,  9.07463201e+01,  9.71505662e+01,
+         6.65597044e+02,  2.73866870e+02,  1.59300080e+03,  2.38729928e+02,
+         5.65274523e+00, -5.97707737e+01,  3.32553516e+02,  6.39520529e+02,
+         4.87746563e+02,  8.85288869e+02,  2.66541079e+02,  6.70468659e+01,
+         3.11478525e+02,  1.78469055e+02,  7.47882280e+01,  1.30129753e+02,
+         1.05142044e+02,  1.02122864e+02,  2.08531841e+03,  4.78781128e+02,
+         3.64455722e+02,  7.48725513e+02,  2.77404065e+02,  1.37919465e+03,
+         4.23075938e+02,  2.14450062e+02,  5.96074737e+02,  1.56296709e+03,
+         1.23149898e+03,  5.57341713e+01,  2.66331646e+02,  7.13868425e+02,
+         2.14664345e+02,  9.76477736e+00,  4.00964151e+02,  5.07375007e+02,
+         3.29891355e+02,  8.26167256e+02,  1.83455761e+02,  2.39524268e+03,
+         2.70141668e+02,  1.52892573e+03,  3.33387907e+00,  1.86924423e+02,
+         2.03057072e+02,  7.37215440e+02,  3.22673236e+02,  1.30804552e+02,
+         2.39015925e+01,  1.12347751e+02,  2.87021299e+02,  1.83719903e+02,
+         4.28937289e+02, -2.59045845e+01,  2.85919078e+02,  1.63007388e+02,
+         4.82516510e+02,  5.73368746e+02,  7.69329545e+01,  1.02632498e+03,
+         8.76754055e+02,  5.58645262e+02,  6.85872734e+02,  4.26201901e+02,
+         2.74477467e+02,  8.47263208e+02,  2.61321278e+02,  4.99007751e+02,
+         3.00965138e+02,  1.43033147e+03, -2.44569459e+01,  8.57828088e+01,
+         3.19395872e+02,  6.70189944e+00,  1.01616698e+02,  8.06373463e+02,
+         1.47291876e+03,  1.44268250e+01,  8.98027290e+02,  1.04054062e+02,
+         4.17643965e+01,  6.65609246e+02, -5.80064729e+01,  2.47411408e+02,
+         1.08158935e+03,  4.47568404e+02,  1.39549865e+03,  4.06546637e+02,
+         1.89501605e+03,  1.37376551e+03,  1.47163521e+03,  9.26328327e+02,
+         1.54997320e+02,  4.90451535e+02, -1.91671407e+01,  8.17859450e+01,
+         2.49078614e+02,  3.71035451e+02,  7.62553032e+01,  1.04012292e+03,
+         3.10734976e+02,  1.38908723e+02,  1.81359253e+02,  1.25253037e+03,
+         9.82459229e+02,  2.54594251e+02,  5.49055371e+02,  2.10878776e+02,
+         7.87439045e+01,  1.85476165e+02,  2.10935303e+03,  1.37872961e+03,
+         1.23887369e+03,  2.13387204e+02,  1.51004781e+03,  1.70536835e+02,
+         5.90374185e+01,  5.04241477e+02,  5.20396129e+02,  5.67912633e+02,
+         3.36288718e+02,  1.67855192e+03,  1.83091586e+02,  1.14255435e+02,
+         6.57945000e+02,  3.97131912e+02,  1.65750827e+03,  5.86089064e+02,
+         1.15787535e+03,  5.50323350e+02,  9.81720328e+02,  1.25093200e+02,
+         1.26026094e+02,  6.95239749e+02,  2.91273659e+01,  2.24242481e+02,
+         1.24528647e+03,  4.29038711e+02,  9.99025801e+01,  2.74150608e+03,
+         2.56457647e+02,  9.03842673e+02,  4.87607289e+02, -1.41219794e+01,
+         1.30150724e+03,  7.38590439e+01,  6.95318954e+02,  1.07606727e+03,
+         2.56482164e+03,  9.70620101e+02,  6.22114194e+02, -2.68278067e+01,
+         1.68415905e+02,  2.04018579e+03,  1.77690715e+02,  3.26084762e+02,
+         3.73423293e+02,  5.58071808e+01,  2.99190771e+02,  3.02808564e+02,
+         1.67029113e+02,  1.19215270e+02, -3.36017096e+01,  8.14689213e+02,
+         7.10252704e+02,  2.04933390e+03,  5.64454936e+02,  7.15031029e+01,
+        -4.73949430e+01,  1.46646079e+02,  8.67988759e+02,  2.11128644e+03,
+         6.80339635e+01,  5.29523479e+02,  4.97571398e+02,  2.32823347e+02,
+         6.98925075e+02,  5.11949341e+02,  2.45968371e+03,  1.75476729e+02,
+         7.22369335e+02,  2.48421549e+02,  2.00958175e+02,  1.58833036e+03,
+         1.37476358e+03,  3.03396676e+02,  5.14688511e+02,  1.54866573e+02,
+         9.38937530e+01,  3.89454630e+02,  9.35192588e+02,  2.59325849e+02,
+         1.95900281e+01,  3.78608139e+02,  1.12936171e+03,  1.89089056e+02,
+         2.46470152e+02,  7.95971311e+02,  6.95131733e+02,  3.73937588e+02,
+         3.14570662e+02,  6.17643451e+01,  2.21594549e+02,  1.07452588e+03,
+         1.55752269e+03,  2.01396543e+02,  5.79403779e+02,  4.21846717e+01,
+         6.13318580e+02,  6.28056972e+02,  4.75302532e+02,  2.38653710e+02,
+         2.76546995e+03,  3.18904587e+02,  5.53736652e+02,  1.14713045e+02,
+         9.18677918e+02,  4.61478056e+01,  5.42857457e+01,  4.52022490e+02,
+         1.39075879e+02,  2.02316467e+02,  3.15760731e+02,  5.79181139e+02,
+         8.52065026e+02,  5.32156181e+02,  1.39578114e+02,  1.52884618e+03,
+         3.49761283e+02,  4.87976453e+02,  8.38130786e+01,  1.23631425e+03,
+         6.37003459e+02,  4.87244319e+02,  2.23505909e+02,  9.06519510e+02,
+         9.60195936e+02,  2.44308189e+02,  1.58645860e+02,  8.57869722e+02,
+         1.37344154e+03,  5.15650909e+02,  3.36839575e+01,  5.68383306e+02,
+         1.06244994e+03,  1.23407943e+02,  1.80122523e+03,  3.35210443e+02,
+         1.01265727e+03,  3.92845583e+02,  2.04424876e+02,  2.03396038e+02,
+         5.71114893e+02,  2.27740357e+02,  1.47121992e+02, -9.08733963e+01,
+         5.60366557e+02,  1.15750855e+03,  4.62646526e+01,  8.31264137e+02,
+         6.84508904e+02,  3.00387007e+02,  1.17168134e+03,  1.25796427e+03,
+         3.27955914e+02,  3.06045363e+02,  1.72787680e+02,  5.74947896e+02,
+         1.38756681e+03,  1.26068584e+02,  9.79934952e+01,  3.24789465e+02,
+         7.73584524e+02,  8.82893473e+01,  5.25423729e+01,  1.19108003e+03,
+         9.46722822e+02,  7.86867165e+02,  4.02769930e+02,  1.73265029e+02,
+         2.57752684e+02,  7.22768751e+02,  4.27116208e+02,  3.46764436e+01,
+        -2.01887836e+01,  2.43624780e+01,  1.45696470e+02,  8.29789088e+01,
+         5.25444906e+01,  1.96207133e+03,  6.81053170e+02, -2.12535069e+01,
+         1.22631843e+03,  3.66271871e+02,  1.00188537e+03,  2.61820050e+02,
+         2.73645762e+03,  6.34120299e+02,  3.61093023e+02,  1.06249050e+03,
+         1.21223911e+03,  3.06655097e+02,  3.31247184e+02,  5.70870855e+02,
+         2.22401495e+02,  4.35068238e+02,  8.00097139e+02,  2.19307559e+02,
+         5.46785797e+02,  4.53203777e+01,  1.09645985e+02,  2.63172998e+02,
+         3.89022574e+02, -5.51132298e+01,  1.85448651e+02,  6.55417774e+02,
+        -6.31540342e-02,  1.39569322e+02,  9.05021044e+02,  6.19708250e+02,
+         9.05510308e+02,  1.92477148e+02,  1.68806045e+02,  2.03675425e+02,
+         2.66483713e+02,  2.65267638e+01,  3.81523930e+02,  6.98677986e+02,
+         1.85234658e+03,  1.01504925e+03,  2.16979064e+02,  6.05802008e+01,
+         1.96665047e+01,  1.42072697e+03,  8.34802570e+02,  4.68993641e+02,
+         1.08366812e+03,  8.09153840e+02,  1.96123361e+02,  3.26230425e+02,
+         7.11803015e+02,  1.06159894e+03,  1.96830846e+01,  2.86999874e+02,
+         7.44983338e+02,  1.79957257e+02,  8.00035634e+02,  4.95300152e+02,
+         5.88733113e+02,  4.18929945e+01,  2.34159142e+02,  6.38645755e+02,
+         4.98121004e+02,  2.28132079e+02,  3.11496449e+02,  1.81871923e+03,
+         4.22461931e+02,  1.27872428e+02,  4.51418796e+02,  1.04752245e+03,
+         9.57611601e+02,  3.05401090e+02,  6.51146720e+02,  6.39942678e+02,
+         1.93755052e+02,  1.74346591e+02,  3.61284688e+03,  4.06726580e+02,
+        -3.86735247e+00,  4.52143980e+02,  1.89675257e+02,  5.40787047e+01,
+         7.89576090e+02,  3.39074790e+02,  2.75949207e+02,  8.37755739e+01,
+         2.51659679e+02,  7.22397388e+02,  1.66598592e+02, -2.17900619e+01,
+         6.62830508e+02,  4.06654659e+02,  1.08555507e+02,  2.43382042e+02,
+         4.76277772e+02,  3.84506607e+02,  2.99245305e+02,  7.28888446e+02,
+         9.38029324e+02,  5.24769811e+01,  1.47644466e+03,  1.65458702e+03,
+         2.92257510e+02,  1.08147887e+03,  1.14118589e+03,  1.35054198e+02,
+         1.70695853e+02,  1.66072011e+02,  3.02486241e+02,  1.21657418e+03,
+         5.69412258e+02,  1.03863881e+02,  2.75379447e+03,  6.85575479e+02,
+         1.42511778e+02,  2.00931209e+02,  4.19387812e+02,  4.68263613e+02,
+         3.90020053e+02,  6.04839136e+02,  6.44451286e+02, -6.66447890e+00,
+         9.42779799e+02,  2.76544564e+03,  1.53896029e+03,  1.75033427e+02,
+         1.16987914e+03,  4.15934737e+02,  1.62190290e+03,  1.50765665e+02,
+         3.01890980e+02,  4.97523388e+02,  6.59404656e+02,  7.13953330e+02,
+         8.06482886e+02,  5.30576994e+02,  3.48303024e+02,  4.37623249e+02,
+         1.67754459e+03,  6.31739423e+02,  2.42001322e+02,  3.68399466e+02,
+         3.97288944e+02,  2.36232755e+02,  2.01515590e+02,  1.40410995e+03,
+         6.05253267e+01,  5.68897680e+02,  4.10905928e+02,  2.39176251e+02,
+         1.09795138e+03,  5.67914409e+02,  6.00199590e+02,  6.46721596e+02,
+         3.22672927e+02,  6.51241612e+02,  8.89894678e+02,  6.39199796e+02,
+        -2.96951633e+01,  1.42253961e+02,  4.70934185e+02,  7.81308091e+02,
+         1.76514765e+02,  2.23374388e+02,  3.37794869e+02,  4.12759660e+02,
+         1.16890185e+02,  8.77905918e+02,  1.30287084e+02,  1.80072217e+03,
+         1.61781371e+03,  4.48716392e+02,  2.49806401e+02,  8.63614591e+01,
+         7.06738794e+02,  1.69491881e+03,  3.12115251e+02,  4.80207115e+02,
+         2.89912188e+02,  5.42102676e+02,  7.11530982e+01,  2.51784429e+03,
+         2.45202534e+02,  1.88152358e+02,  2.59003389e+03, -3.38147951e+01,
+         5.40315534e+01,  1.56571814e+02,  2.23204022e+02,  8.00633913e+01,
+         6.58603414e+02,  3.19574939e+02,  1.08337329e+03, -2.61612512e+01,
+         1.54189810e+03,  9.49554121e+01,  8.03102723e+02,  4.55969697e+02,
+         7.60985064e+02,  9.27912005e+01,  6.38496226e+02,  6.43693464e+02,
+         6.37691866e+02,  7.44789190e+01,  1.15014531e+02,  4.94872143e+02,
+         1.51224460e+02,  6.45666213e+02,  1.34542814e+02,  7.46064957e+01,
+         4.00274130e+02,  2.42013356e+03,  4.50383524e+01,  1.00046030e+02,
+         2.75724262e+02,  8.64489948e+02,  5.36322513e+02, -3.30778263e+01,
+         4.44736558e+02,  7.74043323e+02,  3.14313674e+02,  2.96147570e+02,
+         1.56847143e+03,  2.76569579e+02,  1.30636677e+02,  4.94179372e+02,
+         9.29954497e+01,  6.99551377e+02,  8.11568971e+02,  4.64266815e+02,
+         3.23078147e+02,  2.05962469e+03,  6.71534190e+02,  3.51251587e+02,
+         2.32737163e+02,  1.63930708e+02,  2.93236432e+02,  4.22389885e+02,
+         2.17038277e+03,  1.91865107e+02,  2.75129434e+02,  3.11706742e+02,
+         4.20664001e+02,  6.26911884e+02,  5.25031184e+02,  1.26695833e+02,
+         8.19335312e+01,  5.02498994e+02,  5.28431620e+02,  2.23116964e+03,
+         1.93815646e+03,  6.78450682e+02,  2.20370665e+01,  5.24447369e+02,
+        -4.24777174e+01,  3.77076353e+02,  2.91568785e+02,  1.33009169e+03,
+        -6.80457180e+01,  5.56229100e+02,  1.19266429e+03,  1.60228195e+03,
+         9.97134181e+02,  4.31752413e+01,  1.27485905e+03,  6.64512351e+02,
+         4.48345002e+02,  1.81863237e+02,  3.09655050e+02,  1.11444864e+03,
+         1.82352503e+02,  3.69482960e+02,  1.15875080e+02,  5.91321755e+02,
+         5.74103357e+02,  1.16086182e+03,  1.94705604e+02,  8.08433544e+02,
+         3.10815069e+02,  1.03513651e+02,  1.60727972e+03,  9.58694884e+02,
+         4.28080737e+02,  2.00733694e+02,  3.25175126e+02,  1.16894115e+03,
+         3.54706144e+02,  2.68741784e+02,  6.33624374e+02,  8.97316527e+01,
+         4.54919264e+02,  2.59464722e+03,  6.74424457e+01,  9.92777296e+02,
+         2.51351388e+02,  4.08593479e+01,  2.35121922e+02,  5.17903628e+02,
+         4.60532833e+02,  2.60096719e+01,  7.03462379e+01,  2.97303464e+02,
+         2.74173248e+02,  6.21880238e+02,  7.64905682e+02,  1.41656980e+02,
+         5.22010263e+02,  2.22805919e+02,  6.76182262e+01,  2.15036914e+02,
+         5.57144815e+02,  1.32090298e+03,  1.87148297e+03,  3.81445137e+02,
+         2.59455790e+02,  3.39983529e+02,  1.87609951e+02]),
+ array([ 1.73300000e+02,  5.00470000e+02,  3.94740000e+02,  7.39500000e+02,
+         1.11105045e+02,  2.08530000e+02,  1.06230000e+02,  2.05279000e+03,
+         1.74980000e+02,  1.16391000e+03,  1.68494000e+03,  7.58390000e+02,
+         3.46720000e+02,  2.08928000e+03,  6.34790000e+02,  1.41060000e+02,
+         8.01200000e+01,  9.32050000e+02,  1.59609911e+02,  1.73620000e+02,
+         5.52300000e+01,  4.10378236e+02,  1.96067000e+03,  4.93460000e+02,
+         1.06230000e+02,  3.49170000e+02,  1.90950000e+02,  9.85030000e+02,
+         1.73570000e+02,  6.78600000e+01,  1.96067000e+03,  3.94210000e+02,
+         9.18890000e+02,  6.26090000e+02,  1.85080000e+02,  8.02600000e+01,
+         7.24940000e+02,  3.58640000e+02,  6.43000000e+01,  3.83570000e+02,
+         3.69080000e+02,  2.12730000e+02,  1.78310000e+02,  5.83070000e+02,
+         1.95710000e+02,  1.90950000e+02,  9.58150000e+02,  4.39290000e+02,
+         1.83560000e+02,  1.47693000e+03,  8.96200000e+01,  2.58196000e+03,
+         6.54600000e+01,  1.26608000e+03,  3.16550000e+02,  3.67130000e+02,
+         8.78960000e+02,  3.21960000e+02,  2.54138000e+03,  3.77970000e+02,
+         7.13500000e+01,  5.19201256e+02,  7.03740000e+02,  1.08309000e+03,
+         1.47794000e+03,  2.80440000e+02,  5.23500000e+01,  1.28931000e+03,
+         6.81320000e+02,  3.72830000e+02,  2.82070000e+02,  3.98420000e+02,
+         1.44458000e+03,  5.58400000e+01,  5.21505467e+02,  7.86500000e+01,
+         4.49670000e+02,  4.79670000e+02,  7.88800000e+01,  9.87300000e+01,
+         1.22740000e+02,  9.06290000e+02,  7.49600000e+01,  1.68570000e+02,
+         5.14540000e+02,  1.59720000e+02,  1.51308000e+03,  3.06818732e+00,
+        -9.46889006e+01, -1.75021046e+02,  1.88020000e+02,  5.89980000e+02,
+         4.65960000e+02,  8.61570000e+02,  2.23140000e+02,  1.06420000e+02,
+         3.74015473e+02,  1.06960000e+02,  6.86800000e+01,  6.22900000e+01,
+         8.61500000e+01,  1.59320000e+02,  2.16992000e+03,  5.15950000e+02,
+         4.64080000e+02,  7.72300000e+02,  2.30904700e+02,  1.24039000e+03,
+         4.79520000e+02,  2.29440000e+02,  7.36680000e+02,  1.56248000e+03,
+         1.25099000e+03,  7.49600000e+01,  1.59720000e+02,  7.27830000e+02,
+         1.88130000e+02,  0.00000000e+00,  4.44970000e+02,  4.75460000e+02,
+         4.83720000e+02,  8.89170000e+02,  1.40420000e+02,  2.33362000e+03,
+         3.06050000e+02,  1.68030000e+03, -1.75021046e+02,  2.16290000e+02,
+         8.96200000e+01,  5.48127879e+02,  2.86400000e+02,  8.83000000e+01,
+         1.36400000e+02,  6.22900000e+01,  2.51230000e+02,  1.71380000e+02,
+         3.16550000e+02,  2.57000000e+01,  2.27320000e+02,  1.55670000e+02,
+         3.95270000e+02,  5.06210000e+02,  9.99300000e+01,  1.29218000e+03,
+         9.29910000e+02,  4.28640000e+02,  5.35490000e+02,  3.45390000e+02,
+         3.76444572e+02,  1.19553000e+03,  3.94210000e+02,  3.60340000e+02,
+         1.82626773e+02,  1.47794000e+03, -1.47363314e+02,  1.06930000e+02,
+         2.55320000e+02,  9.31600000e+01,  3.81760880e+02,  9.94369113e+02,
+         2.04792000e+03,  4.65200000e+01,  8.95240000e+02,  9.57600000e+01,
+         8.29300000e+01,  6.61060000e+02,  4.33700000e+01,  3.40760000e+02,
+         1.51412000e+03,  4.10378236e+02,  1.68108000e+03,  4.27270000e+02,
+         1.55507000e+03,  1.57690000e+03,  1.46990000e+03,  7.50730000e+02,
+         1.37890000e+02,  5.89980000e+02,  4.33700000e+01, -5.37244000e+01,
+         2.43980000e+02,  3.48500000e+02,  1.25570000e+02,  9.58150000e+02,
+         2.83390000e+02,  5.14200000e+01,  1.30220000e+02,  8.67067352e+02,
+         7.70880000e+02,  2.73420000e+02,  7.34560000e+02,  1.63065182e+02,
+         9.92344976e+01,  9.20800000e+01,  2.05279000e+03,  1.33323000e+03,
+         1.24039000e+03,  3.53530000e+02,  8.67067352e+02,  1.61228841e+02,
+         6.22900000e+01,  6.83460000e+02,  4.09980000e+02,  5.05100000e+02,
+         3.68050000e+02,  1.44656000e+03,  3.76444572e+02,  1.55140000e+02,
+         6.23550000e+02,  2.78920000e+02,  1.59354000e+03,  5.64850000e+02,
+         1.29218000e+03,  5.58622802e+02,  1.11878000e+03,  1.30220000e+02,
+         2.02310000e+02,  8.69600000e+02, -1.01035804e+02,  3.49170000e+02,
+         1.24563023e+03,  3.18013480e+02,  1.06960000e+02,  2.75890000e+03,
+         3.21080000e+02,  9.01760000e+02,  5.12190000e+02,  7.02911511e+01,
+         1.12923000e+03,  1.03430000e+02,  5.70950000e+02,  9.58150000e+02,
+         3.83410000e+03,  9.81190000e+02,  5.97510000e+02, -9.39989240e+01,
+         1.11105045e+02,  2.08932000e+03,  8.96200000e+01,  3.05202255e+02,
+         3.02610000e+02,  1.09840000e+02,  2.77220000e+02,  2.73510000e+02,
+         2.56340000e+02,  1.77060000e+02,  2.57000000e+01,  1.18533000e+03,
+         7.28370000e+02,  2.42347000e+03,  5.44590000e+02,  8.02600000e+01,
+        -3.48270238e+02,  1.29560000e+02,  9.18890000e+02,  2.08928000e+03,
+         1.90950000e+02,  5.36180000e+02,  4.83720000e+02,  2.98970000e+02,
+         6.76450000e+02,  4.82970000e+02,  1.96889000e+03,  2.84540000e+02,
+         7.49310000e+02,  1.90210000e+02,  2.78008241e+02,  1.81262000e+03,
+         1.25099000e+03,  2.48570000e+02,  4.85380000e+02,  1.90010000e+02,
+         1.20260000e+02,  4.62300000e+02,  1.01203000e+03,  2.43440000e+02,
+         2.98000000e+01,  3.77160000e+02,  1.27102000e+03,  1.68990000e+02,
+         2.67640000e+02,  6.95280000e+02,  7.54260000e+02,  3.39490000e+02,
+         2.65420000e+02,  1.11070000e+02,  2.75380000e+02,  1.52729000e+03,
+         2.08928000e+03,  1.85690000e+02,  6.49830000e+02,  1.33200000e+01,
+         5.66640000e+02,  5.96361916e+02,  4.38500000e+02,  1.90210000e+02,
+         1.23499240e+03,  2.23140000e+02,  4.65960000e+02,  1.05500000e+02,
+         7.03740000e+02,  7.86500000e+01,  3.06600000e+01,  4.47450000e+02,
+         1.22280000e+02,  2.83390000e+02,  2.59690000e+02,  5.78260000e+02,
+         1.08309000e+03,  4.88030000e+02,  1.34260000e+02,  1.73067000e+03,
+         3.72830000e+02,  5.30220000e+02,  2.71100000e+01,  1.59354000e+03,
+         8.47770000e+02,  6.07800000e+02,  1.90210000e+02,  8.80440000e+02,
+         1.31531000e+03,  1.73570000e+02,  1.23330000e+02,  8.17330000e+02,
+         1.31531000e+03,  3.74180000e+02,  6.54600000e+01,  4.46770000e+02,
+         1.16591000e+03,  8.21500000e+01,  1.84645000e+03,  2.52630000e+02,
+         1.20517000e+03,  3.06050000e+02,  2.81320000e+02,  7.52200000e+01,
+         5.66640000e+02,  1.66400000e+02,  1.73400000e+02,  2.71100000e+01,
+         4.30310000e+02,  1.11818000e+03,  5.37000000e+01,  7.41910000e+02,
+         5.97510000e+02,  2.81320000e+02,  1.02628000e+03,  1.09707000e+03,
+         2.51230000e+02,  1.71380000e+02,  1.05500000e+02,  6.22500000e+02,
+         1.26608000e+03,  1.45470000e+02,  1.73400000e+02,  4.79520000e+02,
+         7.39500000e+02,  1.60760000e+02,  8.05000000e+01,  1.28784000e+03,
+         7.71880000e+02,  8.42700000e+02,  5.19201256e+02,  1.24100000e+02,
+         3.98420000e+02,  5.13000000e+02,  3.77160000e+02,  1.01210000e+02,
+        -1.54544686e+02,  2.45900000e+01,  2.23640000e+02,  3.97100000e+01,
+         3.06600000e+01,  2.58196000e+03,  6.11050000e+02, -4.83960463e+01,
+         1.47693000e+03,  3.94210000e+02,  9.06290000e+02,  2.26630000e+02,
+         2.54138000e+03,  4.10378236e+02,  5.19201256e+02,  8.38590000e+02,
+         1.11878000e+03,  3.80430000e+02,  3.77370000e+02,  5.56880000e+02,
+         2.07470000e+02,  2.91410000e+02,  7.78930000e+02,  2.04280000e+02,
+         4.69800000e+02,  9.49700000e+01,  5.29500000e+01,  4.21499407e+02,
+         2.52900000e+02,  6.63300000e+01,  1.54310000e+02,  6.67040000e+02,
+        -9.39989240e+01,  1.47790000e+02,  8.95240000e+02,  5.36690000e+02,
+         9.50750000e+02,  1.29170000e+02,  1.59320000e+02,  1.77060000e+02,
+         1.29170000e+02,  5.82300000e+01,  3.20300000e+02,  7.36680000e+02,
+         1.90896000e+03,  1.02628000e+03,  1.75540000e+02,  2.16600000e+01,
+         7.55200000e+01,  1.26231000e+03,  8.89170000e+02,  5.19201256e+02,
+         1.11818000e+03,  7.79720000e+02,  1.63750000e+02,  3.77970000e+02,
+         7.88520000e+02,  1.25099000e+03,  8.40200000e+01,  3.77970000e+02,
+         6.44750000e+02,  1.71380000e+02,  7.22020000e+02,  5.56880000e+02,
+         5.36080000e+02,  1.15140000e+02,  1.22900000e+02,  6.73110000e+02,
+         5.42773202e+02,  3.46720000e+02,  2.03330000e+02,  1.81882000e+03,
+         5.11948430e+02,  1.80360000e+02,  5.14941952e+02,  9.51300000e+02,
+         8.93290000e+02,  2.08530000e+02,  6.24310000e+02,  5.58622802e+02,
+         2.55100000e+01,  1.54310000e+02,  2.59845007e+03,  2.92000000e+02,
+         1.07380344e+02,  4.88860000e+02,  2.16310000e+02,  1.03240000e+02,
+         6.80290366e+02,  2.91410000e+02,  3.33190000e+02,  7.40800000e+01,
+         2.91410000e+02,  7.06190000e+02,  1.70780000e+02,  3.49800000e+01,
+         6.28539733e+02,  4.10378236e+02,  2.55100000e+01,  2.04980000e+02,
+         3.52880000e+02,  3.74180000e+02,  2.10670000e+02,  1.02628000e+03,
+         7.34560000e+02,  6.16600000e+01,  1.52330000e+03,  1.42533000e+03,
+         1.51130000e+02,  1.16391000e+03,  1.08309000e+03,  2.67960000e+02,
+         1.14210000e+02,  2.78920000e+02,  3.06540000e+02,  1.31531000e+03,
+         6.48570000e+02,  7.58800000e+01,  3.23545000e+03,  7.27830000e+02,
+         2.17023491e+01,  4.21499407e+02,  4.18070000e+02,  4.22220000e+02,
+         4.30310000e+02,  5.78260000e+02,  6.35430000e+02,  3.79500000e+01,
+         1.05943000e+03,  2.58496000e+03,  1.81882000e+03,  2.37240000e+02,
+         1.03340000e+03,  4.45940000e+02,  1.68030000e+03,  1.29170000e+02,
+         2.42890000e+02,  4.79670000e+02,  5.77610000e+02,  5.89980000e+02,
+         6.82120000e+02,  5.55576167e+02,  4.10378236e+02,  3.66340000e+02,
+         1.68247000e+03,  7.28370000e+02,  3.74050000e+02,  4.01670000e+02,
+         3.01310000e+02,  2.30904700e+02,  2.79450000e+02,  1.52729000e+03,
+         8.94100000e+01,  5.36180000e+02,  3.52880000e+02,  2.82070000e+02,
+         1.26608000e+03,  5.78260000e+02,  8.00140000e+02,  6.22290000e+02,
+         3.72830000e+02,  5.00940000e+02,  6.60486958e+02,  5.24670000e+02,
+         6.16600000e+01,  1.55080000e+02,  4.55990000e+02,  7.08530000e+02,
+         2.48570000e+02,  2.68820000e+02,  3.64190000e+02,  3.47970000e+02,
+         2.83072087e+02,  6.95280000e+02,  1.55140000e+02,  1.98715000e+03,
+         1.47693000e+03,  3.80430000e+02,  2.43530000e+02,  8.83000000e+01,
+         1.01998000e+03,  1.69121000e+03,  3.16100000e+02,  4.85380000e+02,
+         3.75300000e+02,  6.61060000e+02,  8.83000000e+01,  2.11993000e+03,
+         2.19160000e+02,  1.55140000e+02,  2.58196000e+03, -1.25832961e+02,
+         1.07370000e+02,  1.55040000e+02,  2.12730000e+02,  8.61200000e+01,
+         5.77610000e+02,  2.83390000e+02,  1.03827000e+03,  4.02100000e+01,
+         1.44656000e+03,  9.65500000e+01,  9.09370000e+02,  4.60500000e+02,
+         6.44750000e+02,  1.34260000e+02,  5.13600000e+02,  6.82120000e+02,
+         5.54080000e+02,  6.25300000e+01,  1.41060000e+02,  4.64080000e+02,
+         8.63400000e+01,  6.28539733e+02, -1.86068815e+02,  3.06600000e+01,
+         4.60500000e+02,  2.57291000e+03,  4.42200000e+01,  1.55090000e+02,
+         3.24660000e+02,  8.95240000e+02,  5.05100000e+02,  8.01200000e+01,
+         9.53883683e+01,  8.17330000e+02,  2.48877846e+02,  3.27360000e+02,
+         1.60789000e+03,  2.61470000e+02,  1.22950000e+02,  4.44970000e+02,
+         8.01200000e+01,  5.71650000e+02,  1.07380000e+03,  3.77160000e+02,
+         2.75530000e+02,  2.11993000e+03,  4.64080000e+02,  3.02610000e+02,
+         2.46090000e+02, -2.42735627e+01,  6.27910000e+02,  4.47450000e+02,
+         1.95624000e+03,  2.83072087e+02,  1.63750000e+02,  1.69440000e+02,
+         3.95270000e+02,  4.45940000e+02,  5.87550000e+02,  6.25300000e+01,
+         1.37590000e+02,  5.00940000e+02,  4.47450000e+02,  1.81262000e+03,
+         2.58196000e+03,  6.28090000e+02,  2.45900000e+01,  4.47450000e+02,
+         1.06980000e+02,  4.41720000e+02,  2.46550000e+02,  1.33266000e+03,
+         1.33200000e+01,  5.97510000e+02,  1.20387000e+03,  1.60789000e+03,
+         9.71332016e+02,  4.71100000e+01,  1.09707000e+03,  5.83990000e+02,
+         4.26250000e+02,  2.37240000e+02,  2.19160000e+02,  1.01486000e+03,
+         2.43980000e+02,  2.83072087e+02,  2.43530000e+02,  5.13000000e+02,
+         3.95270000e+02,  1.03827000e+03,  1.22900000e+02,  8.81060000e+02,
+         2.51320000e+02,  9.79700000e+01,  1.81007000e+03,  1.03291000e+03,
+         5.78260000e+02,  1.27760000e+02,  4.26250000e+02,  1.28583000e+03,
+         3.85230000e+02,  2.23060000e+02,  6.07800000e+02, -1.11728455e+01,
+         4.20910000e+02,  2.58196000e+03,  1.22950000e+02,  9.71015013e+02,
+         2.75427176e+02,  8.05000000e+01,  2.17440000e+02,  3.77160000e+02,
+         3.74050000e+02,  5.15700000e+01,  2.97320000e+02,  4.41720000e+02,
+         1.77060000e+02,  5.14540000e+02,  5.67540000e+02,  1.63750000e+02,
+         3.20691663e+02,  1.89920000e+02,  7.86500000e+01,  2.79550000e+02,
+         3.20691663e+02,  1.27102000e+03,  1.96489000e+03,  3.15140000e+02,
+         2.29440000e+02,  3.06540000e+02,  1.55670000e+02]),
+ array([ 1.20438301e+02,  4.81989901e+02,  5.35224805e+02,  7.91097000e+02,
+         1.07963832e+02,  2.43199941e+02,  6.94826686e+01,  2.07050200e+03,
+         2.03786091e+02,  1.19245774e+03,  1.37957842e+03,  7.02497000e+02,
+         3.92388547e+02,  1.93954521e+03,  6.81494507e+02,  1.47388805e+02,
+         8.95950000e+01,  6.44503085e+02,  2.35609864e+02,  2.71455865e+02,
+         5.70880000e+01,  4.42596260e+02,  1.74464600e+03,  4.83835000e+02,
+         1.08304873e+02,  2.42485061e+02,  2.30477718e+02,  8.65170599e+02,
+         1.41400000e+02,  5.51870000e+01,  1.90577600e+03,  3.88550000e+02,
+         7.53072918e+02,  5.24083000e+02,  1.76023355e+02,  8.67480000e+01,
+         7.65433000e+02,  3.66913145e+02,  7.06863011e+01,  3.54856887e+02,
+         3.55185112e+02,  2.41905837e+02,  1.89933000e+02,  5.98610990e+02,
+         2.06201000e+02,  1.69602088e+02,  1.15318741e+03,  4.42524262e+02,
+         2.63905000e+02,  1.48285300e+03,  1.03067000e+02,  2.43172101e+03,
+         7.57530000e+01,  1.29171387e+03,  4.39132060e+02,  4.18561000e+02,
+         9.02058599e+02,  3.45577425e+02,  2.95347545e+03,  2.99652843e+02,
+         9.61200344e+01,  4.56989000e+02,  6.79035000e+02,  9.73257599e+02,
+         1.33910555e+03,  3.14568000e+02,  5.52460000e+01,  1.21467074e+03,
+         5.76471195e+02,  3.85164542e+02,  2.95058843e+02,  3.90480260e+02,
+         1.32106555e+03,  5.15335360e+01,  3.41230884e+02,  6.38597154e+01,
+         5.06199000e+02,  5.25897617e+02,  8.63750000e+01,  1.23141537e+02,
+         1.37699169e+02,  9.29606000e+02,  8.67260000e+01,  1.53445000e+02,
+         6.16923250e+02,  1.79938612e+02,  1.52818100e+03,  3.16756915e+02,
+         8.84645106e+00, -8.21285957e+01,  1.51986025e+02,  6.19367000e+02,
+         4.61241000e+02,  9.53746000e+02,  2.08841000e+02,  8.68417382e+01,
+         4.35277954e+02,  1.70462000e+02,  5.85070166e+01,  7.32921151e+01,
+         8.31966328e+01,  1.44345194e+02,  2.36991100e+03,  4.85671000e+02,
+         4.93835260e+02,  7.47966955e+02,  2.50829270e+02,  1.49610500e+03,
+         4.75653000e+02,  2.02765000e+02,  6.49447233e+02,  1.56817200e+03,
+         1.30437200e+03,  4.82136245e+01,  1.59284470e+02,  7.12787037e+02,
+         2.72262000e+02, -3.54421856e+01,  4.20091706e+02,  5.00406410e+02,
+         4.48978000e+02,  8.78333000e+02,  1.35982000e+02,  2.74679042e+03,
+         3.22836276e+02,  1.54627933e+03,  3.32640227e-01,  1.69405283e+02,
+         1.61543000e+02,  6.81529000e+02,  2.45766941e+02,  8.35480000e+01,
+         1.26367805e+02,  8.69995187e+01,  2.47875000e+02,  2.66607433e+02,
+         3.67847000e+02,  3.05250000e+01,  1.75045902e+02,  1.44796728e+02,
+         4.06635000e+02,  5.36916711e+02,  7.57360000e+01,  1.32247100e+03,
+         9.54307000e+02,  5.05812000e+02,  5.90339270e+02,  2.88309000e+02,
+         4.01297457e+02,  9.88914000e+02,  3.79219000e+02,  3.65792000e+02,
+         2.13961000e+02,  1.33912602e+03,  4.67628295e+00,  7.09921099e+01,
+         2.80897545e+02,  1.21800088e+02,  2.03037853e+02,  9.02397599e+02,
+         1.84510500e+03,  5.76287154e+01,  9.04630000e+02,  9.70076225e+01,
+         9.86131412e+01,  7.70892057e+02,  1.41305653e+01,  2.64484834e+02,
+         1.35617591e+03,  5.01151471e+02,  1.48333700e+03,  4.40718260e+02,
+         1.90748600e+03,  1.39653200e+03,  1.96251600e+03,  8.64285788e+02,
+         1.20493009e+02,  6.45503000e+02,  7.90784498e+01,  1.36659661e+02,
+         2.85169853e+02,  3.06843545e+02,  1.35903873e+02,  1.03084110e+03,
+         2.86417000e+02,  6.10650000e+01,  2.19813080e+02,  1.63151300e+03,
+         9.27156684e+02,  3.14288658e+02,  6.78149000e+02,  1.52009770e+02,
+         7.33760000e+01,  9.21970000e+01,  2.12467121e+03,  1.24385109e+03,
+         1.30036898e+03,  2.45808185e+02,  1.75689600e+03,  2.53384092e+02,
+         5.47790000e+01,  6.47338538e+02,  4.20386000e+02,  6.43107000e+02,
+         3.90488000e+02,  1.68387433e+03,  2.47294432e+02,  1.56119309e+02,
+         6.39783000e+02,  3.06033824e+02,  1.57500200e+03,  5.55035000e+02,
+         1.25580800e+03,  5.13790280e+02,  8.81126000e+02,  1.32251906e+02,
+         2.42697285e+02,  6.79708166e+02, -1.13383058e+02,  2.72315410e+02,
+         1.22871007e+03,  3.69340696e+02,  1.52292823e+02,  2.92414045e+03,
+         2.79748000e+02,  9.39691000e+02,  4.70467507e+02,  6.59990000e+01,
+         1.39314000e+03,  8.46240000e+01,  5.36976280e+02,  1.04030900e+03,
+         1.57822448e+03,  9.89160599e+02,  6.30011000e+02, -1.07495386e+02,
+         1.12054311e+02,  2.09471621e+03,  1.79059105e+02,  2.24185207e+02,
+         3.77794908e+02,  9.21930000e+01,  2.97031188e+02,  2.67497832e+02,
+         1.28204105e+02,  1.69783000e+02,  2.89720000e+01,  1.03367195e+03,
+         7.15193000e+02,  2.14701901e+03,  5.25411897e+02,  7.20910000e+01,
+        -2.76004072e+02,  1.49230000e+02,  7.86304000e+02,  2.23126800e+03,
+         1.61781422e+02,  5.78500918e+02,  4.83176000e+02,  3.29567112e+02,
+         7.26665000e+02,  5.12263000e+02,  1.87694421e+03,  3.00340000e+02,
+         6.67661037e+02,  2.91209759e+02,  3.08442843e+02,  1.78321495e+03,
+         1.12656033e+03,  1.53770819e+02,  5.10522000e+02,  2.05355138e+02,
+         1.11377000e+02,  3.63621000e+02,  1.06023400e+03,  1.54606141e+02,
+         4.10420000e+01,  3.52659941e+02,  1.31124355e+03,  1.45762819e+02,
+         2.31642077e+02,  7.10984000e+02,  8.05290599e+02,  3.77675000e+02,
+         2.89421000e+02,  1.09020937e+02,  2.10658000e+02,  1.45758500e+03,
+         1.79786551e+03,  1.83313509e+02,  7.19742000e+02,  4.49590000e+01,
+         5.72113000e+02,  5.31777507e+02,  4.26884520e+02,  2.70511955e+02,
+         1.72231348e+03,  1.64656418e+02,  4.42347317e+02,  1.03297444e+01,
+         7.44631000e+02,  9.26860000e+01,  2.14620000e+01,  4.30915617e+02,
+         1.29293505e+02,  2.14347819e+02,  3.17516485e+02,  5.12757507e+02,
+         9.33057000e+02,  5.42993000e+02,  1.31336000e+02,  1.55143969e+03,
+         3.68566756e+02,  5.34170000e+02,  3.78160000e+01,  1.57251000e+03,
+         7.04906000e+02,  6.48605425e+02,  2.36552000e+02,  8.03941254e+02,
+         1.40915812e+03,  1.79301457e+02,  1.90531042e+02,  9.19668000e+02,
+         1.32853707e+03,  4.56973145e+02,  5.31871151e+01,  4.77307126e+02,
+         1.29050400e+03,  8.57440000e+01,  2.19271021e+03,  2.91853034e+02,
+         1.25581400e+03,  3.02541000e+02,  2.54518173e+02,  1.34167000e+02,
+         5.90368000e+02,  1.71082395e+02,  1.26091266e+02,  6.08500000e+01,
+         4.47201000e+02,  1.26616798e+03,  5.04440000e+01,  7.97058696e+02,
+         5.84636386e+02,  1.66843136e+02,  9.60725684e+02,  1.23589398e+03,
+         2.41452000e+02,  2.53844900e+02,  1.09428000e+02,  6.99902000e+02,
+         1.36172585e+03,  1.28793902e+02,  1.29748393e+02,  4.09496000e+02,
+         7.13058961e+02,  1.36862986e+02,  6.56492349e+01,  1.33256500e+03,
+         7.49913000e+02,  7.66064491e+02,  4.01065935e+02,  2.01411176e+02,
+         3.97157000e+02,  6.61853000e+02,  3.91588000e+02,  1.37680037e+02,
+         7.58628295e+00,  2.60250000e+01,  1.95987578e+02,  4.79530000e+01,
+         3.22940000e+01,  2.16591900e+03,  6.33770000e+02, -9.08767478e+01,
+         1.33243357e+03,  4.10119520e+02,  8.97485202e+02,  2.68005832e+02,
+         2.99434101e+03,  5.52880438e+02,  3.89065769e+02,  1.00385225e+03,
+         9.54801000e+02,  3.71093547e+02,  3.43269000e+02,  5.29401000e+02,
+         1.59914240e+02,  3.18953209e+02,  8.58544599e+02,  2.77507000e+02,
+         5.01786000e+02,  8.28940000e+01,  7.59800000e+01,  1.80331890e+02,
+         2.93083145e+02,  5.53623072e+01,  1.69056890e+02,  7.13345000e+02,
+         6.55685836e+01,  1.15074099e+02,  8.96851057e+02,  5.63609000e+02,
+         9.09860000e+02,  1.30721450e+02,  1.58996751e+02,  1.83527000e+02,
+         1.78701264e+02,  6.59350000e+01,  3.66744176e+02,  6.72322824e+02,
+         1.72592000e+03,  9.44328000e+02,  1.03540796e+02,  2.95390000e+01,
+         5.08890000e+01,  1.28546157e+03,  7.72694918e+02,  4.26923126e+02,
+         1.20991720e+03,  7.14639837e+02,  1.45611774e+02,  3.28231826e+02,
+         8.29149000e+02,  1.16139468e+03,  7.18610376e+01,  2.70491057e+02,
+         6.82382000e+02,  1.96483421e+02,  6.53058037e+02,  5.58485973e+02,
+         4.55894260e+02,  1.08821533e+02,  1.79504545e+02,  5.66781000e+02,
+         5.00456067e+02,  3.19152209e+02,  2.15295490e+02,  1.61258700e+03,
+         4.82713538e+02,  2.33975002e+02,  4.96553000e+02,  1.12454491e+03,
+         9.84633000e+02,  1.97617133e+02,  7.19064365e+02,  7.05565280e+02,
+         8.69145187e+01,  1.58772519e+02,  2.38631393e+03,  3.15363000e+02,
+        -2.41169771e+01,  5.41856696e+02,  1.85251545e+02,  8.42828231e+01,
+         7.07203456e+02,  3.11648209e+02,  3.48173389e+02,  8.54235045e+01,
+         3.37726941e+02,  7.79169000e+02,  2.02971594e+02,  5.31570000e+01,
+         5.37706387e+02,  4.18182166e+02,  2.73090000e+01,  2.26895000e+02,
+         3.24168000e+02,  3.50881000e+02,  2.65414000e+02,  1.09204500e+03,
+         7.80770000e+02,  6.29250000e+01,  1.54939400e+03,  1.50875700e+03,
+         1.69587894e+02,  1.12920200e+03,  1.16950700e+03,  2.20978280e+02,
+         1.26996000e+02,  2.93559667e+02,  3.39073000e+02,  1.29666200e+03,
+         5.92379166e+02,  1.27630176e+02,  3.13766701e+03,  6.97529000e+02,
+         7.04965182e+01,  1.70486000e+02,  4.27034000e+02,  4.13493133e+02,
+         4.27043000e+02,  5.58184165e+02,  7.55729000e+02,  4.79900000e+01,
+         9.51625000e+02,  2.74271021e+03,  1.83163800e+03,  2.44144000e+02,
+         1.12037100e+03,  3.75134000e+02,  1.61238300e+03,  2.13379545e+02,
+         2.74942000e+02,  4.53804617e+02,  7.59306057e+02,  7.00161000e+02,
+         6.99916000e+02,  4.33603000e+02,  4.64224260e+02,  4.34791389e+02,
+         1.54349033e+03,  6.05622892e+02,  2.88688000e+02,  4.00552826e+02,
+         3.54280000e+02,  2.12262736e+02,  3.01407371e+02,  1.45784574e+03,
+         6.53194498e+01,  5.06507166e+02,  2.92421893e+02,  2.74932972e+02,
+         1.26079100e+03,  4.87828507e+02,  6.84605961e+02,  5.69143000e+02,
+         2.90621000e+02,  5.44435000e+02,  7.36581576e+02,  5.69411000e+02,
+         5.58660000e+01,  2.01404049e+02,  4.73371000e+02,  7.63436538e+02,
+         1.73547441e+02,  2.61701173e+02,  3.13765642e+02,  3.69527000e+02,
+         2.30226000e+02,  8.26343000e+02,  1.54704000e+02,  1.90769300e+03,
+         1.49873100e+03,  4.36235706e+02,  3.72785870e+02,  8.39568065e+01,
+         8.14137000e+02,  1.57127800e+03,  3.13672941e+02,  4.46789000e+02,
+         3.78307000e+02,  6.02153000e+02,  6.71465071e+01,  2.29805291e+03,
+         2.25078884e+02,  1.68980000e+02,  2.56677400e+03,  9.80270388e+00,
+         8.31442117e+01,  1.15209608e+02,  2.31469678e+02,  7.31623011e+01,
+         6.60568000e+02,  3.17329000e+02,  1.10948841e+03,  7.89489536e+00,
+         1.81059200e+03,  8.49030000e+01,  7.52666000e+02,  4.44308767e+02,
+         6.74895073e+02,  1.45988000e+02,  6.10237519e+02,  6.99654365e+02,
+         5.62989613e+02,  5.97250000e+01,  1.35568890e+02,  4.87220166e+02,
+         8.35781076e+01,  5.92578000e+02,  2.09685825e+02,  1.98320000e+01,
+         4.10276000e+02,  1.76598719e+03, -1.63131856e+01,  1.41349890e+02,
+         3.17557330e+02,  8.39394202e+02,  5.77624879e+02,  8.86550000e+01,
+         1.14220170e+02,  7.68568822e+02,  1.98172000e+02,  2.49718815e+02,
+         1.50991300e+03,  1.98847687e+02,  1.32755000e+02,  4.62056898e+02,
+         7.56755238e+01,  6.06627038e+02,  1.00179800e+03,  4.03693000e+02,
+         3.05598991e+02,  2.25179100e+03,  5.97415166e+02,  4.01205843e+02,
+         2.27989229e+02,  2.14461113e+02,  3.54561431e+02,  4.60350389e+02,
+         1.74831543e+03,  2.08279616e+02,  2.02001677e+02,  2.22325545e+02,
+         4.23020000e+02,  4.00571000e+02,  5.34676000e+02,  4.23700829e+01,
+         1.23467009e+02,  6.17718000e+02,  4.87727000e+02,  1.60161214e+03,
+         1.88773700e+03,  6.40741230e+02,  3.85740000e+01,  4.62986000e+02,
+         1.11455568e+02,  4.29120000e+02,  2.81863984e+02,  1.32822995e+03,
+         1.53320000e+01,  6.02475973e+02,  1.16068000e+03,  1.72273000e+03,
+         9.52876000e+02,  4.93380000e+01,  1.22666778e+03,  5.43427000e+02,
+         4.04731260e+02,  1.95030904e+02,  2.53552547e+02,  1.07762368e+03,
+         1.78597607e+02,  2.60974819e+02,  2.18084266e+02,  5.14929166e+02,
+         4.24350260e+02,  9.97850685e+02,  1.94291000e+02,  9.10247000e+02,
+         2.60909518e+02,  1.11872519e+02,  1.43814500e+03,  9.21402000e+02,
+         5.50783390e+02,  1.39626000e+02,  4.33460000e+02,  1.16197805e+03,
+         4.24092324e+02,  2.93825206e+02,  6.63790973e+02,  3.47059262e+01,
+         5.11849250e+02,  2.68388300e+03,  1.50877767e+02,  9.32875000e+02,
+         1.94578266e+02,  7.31600000e+01,  1.83767591e+02,  4.38358000e+02,
+         3.49756000e+02,  4.98167154e+01,  3.70890549e+02,  4.61165000e+02,
+         1.95118000e+02,  5.71478000e+02,  6.59395000e+02,  1.29340073e+02,
+         5.35453471e+02,  2.23347000e+02,  7.17669340e+01,  2.72739000e+02,
+         5.08836244e+02,  1.27711962e+03,  2.07295400e+03,  3.78216826e+02,
+         2.38247173e+02,  3.86431290e+02,  1.33302000e+02]),
+ array([ 1.19762000e+02,  4.53928648e+02,  4.82147713e+02,  7.62251000e+02,
+         1.14301198e+02,  2.03459569e+02,  9.92150000e+01,  1.97489200e+03,
+         1.89246619e+02,  1.13581800e+03,  1.64797774e+03,  6.83763998e+02,
+         3.83198547e+02,  2.03592721e+03,  6.50938613e+02,  1.41629416e+02,
+         1.02723000e+02,  6.76967280e+02,  2.23933518e+02,  2.31409000e+02,
+         4.94480000e+01,  4.66072824e+02,  1.76343824e+03,  4.83487192e+02,
+         1.00608000e+02,  2.86106941e+02,  2.18631198e+02,  9.78596198e+02,
+         1.45219000e+02,  5.28370000e+01,  1.84937900e+03,  4.04276000e+02,
+         7.89328918e+02,  5.74689280e+02,  9.68945717e+01,  8.71640000e+01,
+         7.73809000e+02,  3.40059000e+02,  6.66888027e+01,  2.90578824e+02,
+         3.55379000e+02,  2.20787176e+02,  2.36996457e+02,  5.97220606e+02,
+         2.09514142e+02,  2.28885093e+02,  1.06769100e+03,  4.86197000e+02,
+         2.70398145e+02,  1.37488085e+03,  1.01361000e+02,  2.79964397e+03,
+         6.59728729e+01,  1.27823000e+03,  3.47328941e+02,  3.87108176e+02,
+         8.82225961e+02,  3.36273843e+02,  2.78723821e+03,  2.38879000e+02,
+         1.01520505e+02,  4.24988000e+02,  6.52203000e+02,  1.04820760e+03,
+         1.33755141e+03,  2.32878736e+02,  4.65482117e+01,  1.20527300e+03,
+         5.84254000e+02,  3.53474938e+02,  3.31658871e+02,  3.87233000e+02,
+         1.25700757e+03,  4.09433425e+01,  3.65381351e+02,  7.18446022e+01,
+         5.07833000e+02,  5.71913617e+02,  8.80500000e+01,  1.06553140e+02,
+         1.50510724e+02,  8.91416788e+02,  8.51168027e+01,  1.70562000e+02,
+         6.22867000e+02,  1.90966649e+02,  1.53459500e+03,  3.43976000e+02,
+        -6.19651685e+01, -1.62361665e+02,  1.98862123e+02,  6.07825000e+02,
+         4.51013126e+02,  9.39368000e+02,  2.12227000e+02,  1.80545652e+01,
+         2.82097640e+02,  1.46049450e+02,  5.09307709e+01,  7.31730000e+01,
+         8.32960000e+01,  1.86716398e+02,  2.03080100e+03,  5.03457767e+02,
+         4.46044377e+02,  7.57789538e+02,  3.25499389e+02,  1.34164357e+03,
+         4.80272000e+02,  2.22469000e+02,  5.55106166e+02,  1.49834500e+03,
+         1.38575100e+03, -2.31111108e-01,  1.36808900e+02,  7.26032465e+02,
+         2.66479000e+02,  1.91090053e+01,  3.97629309e+02,  5.57297435e+02,
+         4.39609000e+02,  8.64784924e+02,  1.34166805e+02,  2.47597600e+03,
+         3.03775865e+02,  1.63832100e+03, -4.80298523e+01,  1.71672991e+02,
+         1.33762505e+02,  6.75825037e+02,  2.53865057e+02,  7.66450000e+01,
+         1.15020910e+02,  5.84600000e+01,  2.58322576e+02,  2.19705963e+02,
+         2.95148507e+02,  2.97520000e+01,  1.53440000e+02,  1.72375806e+02,
+         4.12418000e+02,  5.23238320e+02,  7.32200000e+01,  1.24549000e+03,
+         8.73455005e+02,  5.27329973e+02,  6.13074606e+02,  2.84049145e+02,
+         3.67051267e+02,  9.23340000e+02,  3.91234000e+02,  3.84152000e+02,
+         1.84271340e+02,  1.42734900e+03,  6.41237250e+00,  1.06214000e+02,
+         2.64623000e+02,  9.62370000e+01,  1.94177088e+02,  9.97732801e+02,
+         1.77157800e+03,  6.10640000e+01,  8.36227018e+02,  1.02373000e+02,
+         1.03799873e+02,  6.57835000e+02, -3.38893739e+01,  2.79836000e+02,
+         1.68780824e+03,  4.94540376e+02,  1.65923400e+03,  4.08563470e+02,
+         1.98446000e+03,  1.24090000e+03,  1.76266300e+03,  8.72361560e+02,
+         1.13586000e+02,  6.10530000e+02,  7.80230000e+01,  5.70858486e+01,
+         2.64652675e+02,  2.50669145e+02,  1.26500551e+02,  9.78850685e+02,
+         2.93018348e+02,  6.63570000e+01,  2.02728281e+02,  1.69508400e+03,
+         9.95617000e+02,  2.84438781e+02,  7.35779000e+02,  2.27758555e+02,
+         7.45600000e+01,  9.50530000e+01,  1.99643400e+03,  1.34887615e+03,
+         1.31989524e+03,  3.01140832e+02,  1.81830500e+03,  2.03036000e+02,
+         5.65040000e+01,  6.37921000e+02,  4.72995904e+02,  5.95542000e+02,
+         3.93198000e+02,  1.57476005e+03,  2.68914323e+02,  1.69086475e+02,
+         6.46509000e+02,  2.90898649e+02,  1.87717300e+03,  6.23377979e+02,
+         1.29653300e+03,  5.16055348e+02,  9.61294000e+02,  1.90441987e+02,
+         2.42701123e+02,  7.16939837e+02, -7.23034810e+01,  3.11144859e+02,
+         1.35562215e+03,  4.32234060e+02,  1.49851000e+02,  2.71011245e+03,
+         2.44006000e+02,  9.65074198e+02,  4.43315000e+02,  7.43430000e+01,
+         1.41084000e+03,  9.48620000e+01,  5.93829280e+02,  1.04575733e+03,
+         2.12554220e+03,  9.06390000e+02,  6.08220973e+02, -1.04485833e+02,
+         1.25848017e+02,  2.21324597e+03,  1.55518000e+02,  1.93309734e+02,
+         3.56616073e+02,  9.80010000e+01,  3.40346439e+02,  2.70742889e+02,
+         1.87201321e+02,  1.47648000e+02,  3.04190000e+01,  1.03480800e+03,
+         7.59023151e+02,  2.03833700e+03,  4.93110280e+02,  8.32330000e+01,
+        -2.28352664e+02,  1.63759407e+02,  7.98438000e+02,  1.99668300e+03,
+         6.58384239e+01,  6.03332165e+02,  4.77880034e+02,  2.91622547e+02,
+         7.08701000e+02,  5.01584000e+02,  1.81824000e+03,  2.77986145e+02,
+         7.31428000e+02,  2.52653275e+02,  2.47704824e+02,  1.51713691e+03,
+         1.27095600e+03,  1.94895884e+02,  5.15037507e+02,  1.50837276e+02,
+         9.77812317e+01,  3.27544000e+02,  1.07428200e+03,  2.10530518e+02,
+         4.11360000e+01,  2.83736371e+02,  1.17621033e+03,  1.41275517e+02,
+         2.64575336e+02,  7.25563961e+02,  8.38246599e+02,  3.69813000e+02,
+         2.48248824e+02,  9.54877227e+01,  2.56984935e+02,  1.51569395e+03,
+         1.88126397e+03,  1.92700000e+02,  7.13121018e+02,  4.10900000e+01,
+         5.55010000e+02,  5.46828717e+02,  4.11182000e+02,  2.85481005e+02,
+         2.38518200e+03,  1.90379000e+02,  4.73259000e+02,  8.34526245e+01,
+         7.23274280e+02,  8.22648372e+01,  2.41340000e+01,  3.97483000e+02,
+         1.28821807e+02,  1.70637626e+02,  2.06368845e+02,  5.59524904e+02,
+         9.27561365e+02,  5.50380000e+02,  1.44839873e+02,  1.49424600e+03,
+         3.73107000e+02,  5.56555000e+02,  4.43580000e+01,  1.73327000e+03,
+         7.07292000e+02,  6.67395000e+02,  2.02145728e+02,  8.55056000e+02,
+         1.30730315e+03,  1.68880000e+02,  1.83475677e+02,  9.43387000e+02,
+         1.29308162e+03,  4.05038000e+02,  4.93300000e+01,  4.65466369e+02,
+         1.22985800e+03,  9.05550000e+01,  2.08362100e+03,  2.74104085e+02,
+         1.16164200e+03,  3.30202951e+02,  2.72069576e+02,  1.41191000e+02,
+         5.46994784e+02,  2.23130000e+02,  1.39102073e+02,  6.71611151e+01,
+         4.32042000e+02,  1.20906500e+03,  4.94910000e+01,  8.32811000e+02,
+         5.86056000e+02,  2.28660644e+02,  1.01910800e+03,  1.21819633e+03,
+         2.65552000e+02,  2.50369676e+02,  1.04042034e+02,  6.39654000e+02,
+         1.30605185e+03,  1.19399803e+02,  1.36461095e+02,  4.11405000e+02,
+         7.11602326e+02,  1.50059904e+02,  6.64070000e+01,  1.29172700e+03,
+         8.23567990e+02,  7.90928000e+02,  3.80675369e+02,  1.45916902e+02,
+         3.81108000e+02,  5.86445037e+02,  4.27820412e+02,  7.97258995e+01,
+         2.95800829e+01,  2.47700000e+01,  2.16890336e+02,  4.56420000e+01,
+         3.69670000e+01,  2.26707000e+03,  6.61299000e+02, -4.70597250e+01,
+         1.34824935e+03,  4.01482000e+02,  9.42166005e+02,  2.87757832e+02,
+         2.98419401e+03,  5.53380892e+02,  3.59564514e+02,  9.85917000e+02,
+         9.55931000e+02,  4.37134253e+02,  3.37466000e+02,  5.28419863e+02,
+         1.73213172e+02,  3.42984000e+02,  9.25157000e+02,  2.25168000e+02,
+         5.06706507e+02,  9.38940000e+01,  7.10140000e+01,  1.90680951e+02,
+         3.39325601e+02,  8.38098729e+01,  1.64301209e+02,  6.90000000e+02,
+         5.04919098e+01,  1.56138050e+02,  8.92372000e+02,  6.55682000e+02,
+         9.01850000e+02,  2.07594975e+02,  1.78591263e+02,  1.98835769e+02,
+         2.06791091e+02,  7.23740000e+01,  3.81762000e+02,  6.96859990e+02,
+         1.68346400e+03,  9.41482253e+02,  1.56724632e+02,  2.49450000e+01,
+         5.72280000e+01,  1.58092800e+03,  7.78007976e+02,  4.08150126e+02,
+         1.20188360e+03,  7.75622375e+02,  1.52073057e+02,  2.83895000e+02,
+         7.83604484e+02,  1.17856100e+03,  7.57840000e+01,  3.17637422e+02,
+         6.59265000e+02,  2.64006881e+02,  5.92029438e+02,  5.46525250e+02,
+         5.07158000e+02,  1.00714341e+02,  1.47736624e+02,  5.44813706e+02,
+         4.79141000e+02,  3.77436908e+02,  1.33602329e+02,  1.73176700e+03,
+         4.32425412e+02,  2.25696893e+02,  5.38881031e+02,  1.08290760e+03,
+         8.94901000e+02,  2.14625158e+02,  7.18087000e+02,  6.49270990e+02,
+         5.78154498e+01,  1.61389383e+02,  2.51851901e+03,  3.33632000e+02,
+        -7.25988179e+00,  4.96171166e+02,  1.92219000e+02,  9.31440344e+01,
+         7.65143456e+02,  3.32490350e+02,  3.50705000e+02,  7.96560000e+01,
+         3.33899116e+02,  7.60184000e+02,  1.57759000e+02,  4.49003954e+01,
+         5.45617630e+02,  4.55039000e+02,  3.47310000e+01,  2.65486912e+02,
+         3.81171000e+02,  3.57398000e+02,  2.58370545e+02,  1.21826725e+03,
+         8.26123057e+02,  6.15440000e+01,  1.42761257e+03,  1.28950700e+03,
+         1.85428884e+02,  1.14297055e+03,  1.10938700e+03,  2.00423134e+02,
+         1.34286505e+02,  2.54137473e+02,  2.94186000e+02,  1.22965793e+03,
+         6.21432000e+02,  6.84118027e+01,  2.96189679e+03,  7.00996073e+02,
+         7.47644431e+01,  2.34716332e+02,  4.04889000e+02,  4.65697000e+02,
+         4.58552260e+02,  5.32912359e+02,  7.53759000e+02,  4.24728729e+01,
+         1.03410962e+03,  2.48765921e+03,  1.63511500e+03,  2.23233341e+02,
+         1.08883391e+03,  3.50406000e+02,  1.62370000e+03,  1.42401000e+02,
+         2.83504000e+02,  5.21179000e+02,  6.68234000e+02,  6.92355000e+02,
+         7.06818000e+02,  4.44816320e+02,  4.60671000e+02,  3.77225000e+02,
+         1.59255457e+03,  6.87930918e+02,  2.69239000e+02,  3.93702296e+02,
+         3.55223145e+02,  2.34672413e+02,  2.89673545e+02,  1.39753664e+03,
+         6.72100000e+01,  5.50397000e+02,  3.22568000e+02,  3.08758935e+02,
+         1.22026800e+03,  4.86972000e+02,  6.84865000e+02,  5.86342000e+02,
+         2.90061265e+02,  5.56299000e+02,  8.04535037e+02,  5.61971648e+02,
+         4.64850000e+01,  1.67122728e+02,  4.87664000e+02,  7.81671000e+02,
+         1.99770118e+02,  2.63496000e+02,  3.21060837e+02,  4.14183251e+02,
+         2.32887969e+02,  8.50784057e+02,  1.43102815e+02,  1.67307595e+03,
+         1.36317633e+03,  4.29696706e+02,  3.03218000e+02,  7.21633011e+01,
+         8.34770037e+02,  1.57941805e+03,  2.96072041e+02,  4.10485232e+02,
+         3.40545385e+02,  5.93960192e+02,  6.48750000e+01,  2.65917600e+03,
+         2.80352938e+02,  1.83604000e+02,  2.45286900e+03,  1.69710000e+01,
+         8.39917643e+01,  1.15835310e+02,  2.79595400e+02,  6.67763011e+01,
+         6.26886000e+02,  3.10208389e+02,  1.13466100e+03,  1.53711076e+01,
+         1.46919405e+03,  9.12160000e+01,  7.80530280e+02,  4.38492000e+02,
+         7.80789000e+02,  1.38569000e+02,  6.21405824e+02,  6.98348000e+02,
+         5.72858250e+02,  5.91120000e+01,  1.29335805e+02,  5.22626244e+02,
+         9.00450000e+01,  6.10664973e+02,  2.02599304e+02,  3.36560000e+01,
+         4.01419000e+02,  2.60227620e+03, -5.92499429e+01,  1.41427000e+02,
+         3.12303133e+02,  8.12727039e+02,  5.82456250e+02,  8.39810000e+01,
+         2.49117649e+02,  8.36347422e+02,  2.08880785e+02,  2.49843336e+02,
+         1.54636205e+03,  1.80028025e+02,  7.35590288e+01,  4.72037000e+02,
+         6.93330000e+01,  5.78911000e+02,  1.06260760e+03,  4.23018146e+02,
+         2.92738824e+02,  1.98408392e+03,  5.74985648e+02,  3.68584000e+02,
+         2.02114259e+02,  2.67265097e+02,  3.38705152e+02,  4.51993166e+02,
+         1.98988600e+03,  1.83791478e+02,  1.87329000e+02,  1.99577000e+02,
+         4.13834260e+02,  4.37956000e+02,  5.56075192e+02,  5.71040000e+01,
+         1.45683457e+02,  5.99142250e+02,  4.40071000e+02,  2.10610869e+03,
+         2.05307946e+03,  6.17694564e+02,  3.61580000e+01,  4.42923000e+02,
+         6.09921434e+01,  4.34105000e+02,  2.86105854e+02,  1.35358662e+03,
+         1.63313954e+01,  6.08853000e+02,  1.19306988e+03,  1.55604700e+03,
+         1.01991937e+03,  6.16610000e+01,  1.16972007e+03,  5.66504500e+02,
+         4.16560000e+02,  2.16022340e+02,  2.43309000e+02,  1.08036800e+03,
+         1.69321185e+02,  3.02879176e+02,  2.36953000e+02,  5.11934000e+02,
+         4.08745000e+02,  9.89910000e+02,  1.54213687e+02,  8.43442730e+02,
+         2.75607145e+02,  8.52600000e+01,  1.24716300e+03,  9.82501000e+02,
+         5.51727192e+02,  1.44930902e+02,  3.86826000e+02,  1.15229679e+03,
+         3.66340112e+02,  2.27691000e+02,  6.69348000e+02,  6.64762515e+01,
+         4.93709000e+02,  2.51543000e+03,  1.41199266e+02,  8.56918000e+02,
+         2.00457462e+02,  7.69480000e+01,  1.58503687e+02,  4.20874000e+02,
+         2.84634000e+02,  4.11257047e+01,  2.58539164e+02,  4.69821000e+02,
+         1.91830000e+02,  5.59565751e+02,  6.31703000e+02,  1.37428000e+02,
+         6.16022507e+02,  2.16802000e+02,  7.25742349e+01,  2.33646991e+02,
+         4.95279000e+02,  1.23028600e+03,  2.07069800e+03,  3.88786000e+02,
+         2.50747576e+02,  2.80592000e+02,  1.49094554e+02]),
+ array([-1.45494781e+05, -8.03072422e+04, -3.98131201e+03, -1.85638203e+04,
+         1.28756797e+04, -9.66079688e+04, -1.30180102e+05,  5.43200000e+06,
+         4.37005518e+03, -1.90800732e+03, -9.39694824e+02, -9.15528359e+04,
+         3.04235547e+04, -5.11466357e+03,  1.75165234e+04, -1.44178844e+05,
+         1.31655518e+03, -4.09377969e+05, -1.04254945e+05, -1.32235107e+03,
+         1.15341328e+04, -1.03304617e+05, -7.73463203e+04, -1.73119482e+03,
+        -1.84915406e+05, -9.61438672e+04,  5.60401797e+04, -1.26260391e+04,
+         1.19130518e+03, -2.02045094e+05,  6.87469297e+04,  1.71229297e+04,
+        -9.73522656e+03, -9.28221953e+04, -1.05303727e+05, -9.19633672e+04,
+        -4.73863232e+03, -2.35027156e+05,  5.42584297e+04, -3.79398203e+04,
+        -1.13335328e+05,  9.27305176e+02,  9.34517969e+03,  5.99223516e+04,
+        -1.09387414e+05,  4.14443516e+04,  2.77556172e+04,  2.49959297e+04,
+         7.27527109e+04,  3.65271143e+03,  3.70209453e+04,  1.63122695e+04,
+        -9.95540859e+04,  1.34765430e+04, -6.11056982e+03,  3.11516641e+04,
+         7.49086426e+02,  2.65136719e+04, -1.53741844e+05,  4.13134609e+04,
+        -1.48234219e+05, -1.94796750e+05, -2.19856750e+05, -1.43162578e+04,
+        -8.37078906e+03, -1.25244602e+05, -1.41393938e+05, -8.50044531e+03,
+        -7.07053857e+03,  6.28768018e+03,  1.53659922e+04,  3.71633672e+04,
+        -1.76614109e+05, -2.03359125e+05,  2.58278906e+04, -1.69563906e+05,
+         7.24523926e+02, -1.46060969e+05, -2.17421500e+05, -2.02938359e+05,
+         4.35048828e+04,  4.36049268e+03,  2.72515547e+04, -1.59097406e+05,
+        -1.45720703e+04,  2.33530078e+04,  4.98752422e+04,  3.62261250e+04,
+         5.62950391e+04, -5.84037734e+04, -1.14998648e+05,  5.85742676e+02,
+        -1.19337008e+05, -5.44888203e+04,  2.32687344e+04,  5.34183906e+04,
+         1.80363672e+04, -1.19191195e+05, -1.66177750e+05, -1.72211125e+05,
+        -2.03392281e+05,  1.39811797e+04, -8.38603672e+04,  2.57956641e+04,
+         4.07053867e+04,  2.17031641e+04, -8.05166484e+04, -2.17673438e+05,
+        -4.37453789e+04,  2.38636768e+03,  8.83370312e+03,  7.23646143e+03,
+         1.93694297e+04,  5.32431484e+04,  3.31105518e+03,  3.35193438e+04,
+        -1.86827266e+05,  1.42094875e+05, -3.30637094e+05, -2.41978281e+05,
+         8.94467969e+03, -4.18094482e+03,  2.30570234e+04, -2.71968203e+04,
+         2.44156299e+03,  8.59594609e+04,  5.87424375e+04, -2.06935250e+05,
+         2.48940391e+04,  4.65778984e+04, -1.47719078e+05, -1.08109117e+05,
+        -3.42314562e+05, -2.88463203e+04, -1.39998531e+05,  1.67409297e+04,
+        -1.34699000e+05, -1.85025625e+05,  3.84168516e+04, -1.31018848e+04,
+         2.26435234e+04,  2.70630518e+03,  4.02536016e+04,  4.16663721e+03,
+         4.42125830e+03, -7.01081982e+03, -2.66038375e+05, -3.56839344e+05,
+        -1.04803828e+04, -7.77106484e+04, -1.58819250e+05, -3.54427719e+05,
+        -1.82689781e+05,  5.59855518e+03, -2.31939500e+05, -3.06580156e+05,
+         3.14582578e+04, -2.58053203e+04, -2.47326953e+04, -7.63816641e+04,
+         2.68654922e+04,  8.51711426e+02, -3.44590078e+04, -1.56556375e+05,
+        -3.13157438e+05,  2.23260205e+03,  4.84535234e+04, -2.71257578e+04,
+        -2.47163203e+04, -9.29191641e+04, -2.43424453e+04, -1.50764375e+05,
+        -7.99366357e+03, -1.21022570e+05, -1.19222070e+05, -3.30813203e+04,
+         2.19531797e+04,  1.33660234e+04,  5.67385000e+04,  5.06454766e+04,
+        -1.51578857e+03,  1.52477393e+03, -1.12507445e+05,  4.96505234e+04,
+        -1.13442562e+05, -1.96990875e+05, -4.38806982e+03,  4.92742676e+02,
+         1.05916064e+03,  4.40202266e+04, -3.08674453e+04, -3.53200562e+05,
+         2.69794141e+04,  2.24618516e+04, -1.12501258e+05,  4.49424268e+03,
+         4.99791797e+04,  7.96637422e+04, -1.85555781e+05,  2.40428750e+04,
+        -7.87523828e+04, -1.19552633e+05, -1.69965391e+04, -1.05244629e+04,
+        -1.17549633e+05, -1.20907133e+05, -2.58889453e+04, -1.14785938e+05,
+         1.70843018e+03, -1.96671953e+04,  1.66109609e+04, -1.21372570e+05,
+         2.13096953e+04, -1.11576945e+05, -2.22097844e+05,  4.04602422e+04,
+         1.90990859e+04,  2.70434609e+04,  4.31652422e+04, -1.20027227e+05,
+        -2.52739453e+04, -1.02664258e+05, -1.23718320e+05,  1.27249180e+05,
+        -7.85650234e+04,  1.28081406e+04, -2.15101609e+05, -1.13000383e+05,
+        -1.25532289e+05,  8.28803906e+04, -1.19398203e+04, -1.03640633e+05,
+        -1.25640391e+04,  2.33319609e+04,  4.26718018e+03, -5.42668086e+04,
+        -5.29194482e+03, -4.10938232e+03, -1.16495703e+04,  1.01742539e+05,
+         5.09288359e+04, -1.80674406e+05, -6.02573280e+01, -3.79626375e+05,
+        -9.65352422e+04, -1.16270500e+05, -9.72247266e+04, -3.83725732e+03,
+        -4.80275732e+03,  7.46964297e+04, -1.67427844e+05, -1.71536906e+05,
+         6.64029297e+04,  3.16020391e+04, -1.69099453e+04, -1.00830008e+05,
+        -7.95437734e+04, -1.35620625e+05,  6.18461768e+03, -1.17003828e+04,
+         1.56158672e+04, -2.86357531e+05,  4.00233438e+05,  7.97305176e+02,
+        -1.20782820e+05,  2.17072422e+04, -6.33020703e+04,  1.24146172e+04,
+         5.44966455e+03,  1.19092422e+04,  1.73977734e+04,  3.00426172e+04,
+        -9.71837188e+04, -1.47415703e+04, -1.50548203e+04, -1.20635445e+05,
+         1.26421797e+04,  9.43957031e+04,  1.47245078e+04,  3.44782734e+04,
+        -1.80378844e+05, -8.69850781e+03,  6.80307266e+04, -3.25544453e+04,
+        -3.88984453e+04,  3.92714180e+04, -1.07808203e+04,  1.17509297e+04,
+        -6.17782891e+04,  6.16078711e+04,  3.30483672e+04, -1.03296961e+05,
+        -7.76831797e+04,  5.44121143e+03,  4.87238047e+04,  9.59505469e+03,
+        -2.60835107e+03, -1.16172961e+05, -2.17774141e+05, -2.47345500e+05,
+        -1.50147234e+05, -3.13337094e+05,  5.67165859e+04, -1.82853656e+05,
+        -2.94563232e+03, -9.68991484e+04, -2.69398203e+04, -2.05886953e+04,
+         8.68904609e+04, -2.99211953e+04, -1.04662070e+05, -1.12982094e+05,
+         3.03089922e+04, -7.19385391e+04,  1.79391455e+03,  4.64364922e+04,
+         1.33376797e+04,  8.37575195e+03,  2.42355234e+04,  1.23792656e+04,
+        -7.35273389e+03,  1.24647422e+04, -3.42936031e+05, -1.27269094e+05,
+        -1.71839453e+04, -1.76953234e+05, -1.58200953e+05, -2.11163574e+02,
+        -6.37781982e+03, -1.68231312e+05, -6.46281641e+04, -2.34840562e+05,
+         8.60389844e+03,  3.76680176e+02,  3.30796016e+04,  5.88605518e+03,
+        -9.16298828e+04,  1.07393018e+03, -9.24011406e+04, -1.94982062e+05,
+         1.36131172e+04, -7.57362031e+04, -1.67403438e+05, -2.07897188e+05,
+         3.61330469e+04,  4.11637422e+04, -2.61852578e+04, -1.13883383e+05,
+         5.63926484e+04, -1.14700732e+03, -1.85631982e+03,  5.48052891e+04,
+         4.95221143e+03,  4.46419141e+04, -1.39568719e+05,  6.95948047e+04,
+        -2.22291953e+04, -1.90090312e+05, -1.39090375e+05,  3.07099609e+04,
+        -1.83268812e+05,  8.73862656e+04,  1.14696016e+04, -3.44121953e+04,
+        -1.45144984e+05, -6.00676953e+04, -2.54133531e+05, -4.56793516e+04,
+        -1.57285812e+05, -2.17109453e+04, -1.35039766e+05, -1.89982688e+05,
+        -2.09217406e+05, -1.02567258e+05, -1.68123938e+05, -1.10161320e+05,
+        -7.80495391e+04, -2.08828922e+05, -2.97975703e+04, -3.56535250e+05,
+        -1.56694031e+05, -7.68709922e+04, -8.31639141e+04, -1.60681062e+05,
+        -9.76554609e+04, -2.96563203e+04, -2.16649078e+05, -1.85260107e+03,
+         4.54448047e+04,  1.91992734e+04,  5.93568555e+04, -3.10402375e+05,
+        -1.14564117e+05, -1.95553719e+05, -8.45465625e+04, -1.80123703e+05,
+        -1.95566000e+05, -1.16652461e+05, -1.51596812e+05,  3.17694961e+04,
+        -2.00667938e+05, -1.06088039e+05, -8.54925781e+03, -6.34146484e+04,
+         1.02323945e+05,  4.96865859e+04,  1.82227422e+04, -1.65505273e+04,
+         1.99956797e+04, -1.59827547e+05,  2.31989922e+04,  4.82386768e+03,
+        -1.12422602e+05, -9.41869609e+04,  1.80413945e+04,  7.81149297e+04,
+        -2.26048500e+05,  2.59579297e+04,  2.51774268e+03,  6.11199268e+03,
+        -2.87627578e+04, -8.08380469e+04, -9.95306484e+04,  2.50058359e+04,
+         1.25270371e+04, -6.44083828e+04,  4.61348672e+04,  2.94771172e+04,
+         3.10043018e+03,  1.02695625e+04, -1.39899688e+05, -1.06235703e+04,
+         1.89290547e+04, -1.00348188e+05,  2.67286758e+04, -8.06548359e+04,
+        -1.74160875e+05,  2.39827393e+03,  2.64183359e+04,  3.93605518e+03,
+        -3.61330703e+04, -1.31465812e+05,  4.10866797e+04, -1.19582539e+05,
+         2.78905547e+04, -1.19765055e+05,  7.10949453e+04, -1.42380797e+05,
+        -1.03270078e+04,  2.48846953e+04,  3.73312800e+06,  1.31800078e+04,
+         7.44439766e+04, -8.90951641e+04, -1.03015102e+05, -1.26051867e+05,
+         8.38046797e+04,  5.68273125e+04, -3.36694344e+05,  2.53707109e+04,
+        -1.29612773e+05, -1.02520703e+04,  5.35396172e+04, -1.86766062e+05,
+        -1.38092578e+04, -2.07880906e+05,  4.11788984e+04, -1.49858562e+05,
+         2.00503359e+04, -1.23953367e+05, -7.56287891e+04, -2.12542062e+05,
+        -2.09680078e+04, -1.51179750e+05,  6.73939893e+03,  1.33790410e+04,
+        -1.50521125e+05, -2.32213232e+03, -4.43775732e+03, -1.00128477e+05,
+        -5.55007324e+02, -4.10346953e+04, -1.49115797e+05, -2.39953875e+05,
+         5.33011016e+04, -5.21104453e+04,  5.49065438e+05, -1.50088250e+05,
+         2.20262578e+04,  3.64012461e+04, -1.69631125e+05, -2.72221062e+05,
+        -1.69602500e+04,  1.11295234e+04, -2.07313094e+05, -3.18967812e+05,
+        -1.43611641e+04,  4.06452578e+04, -2.37130188e+05,  4.61090547e+04,
+        -1.15035227e+05, -1.09085570e+05, -1.27678477e+05, -3.42749453e+04,
+         1.31273047e+04, -3.20329406e+05, -2.75034453e+04, -6.65431982e+03,
+         3.08227393e+03, -1.67558094e+05, -2.55826469e+05, -1.83557828e+05,
+        -1.72825078e+04,  5.27831914e+04, -1.41412594e+05,  3.83392578e+04,
+        -1.49444797e+05,  2.80708047e+04, -8.57982031e+03, -1.10821953e+04,
+        -1.11795055e+05, -2.19141250e+05,  2.01233359e+04, -7.46481982e+03,
+        -5.89319824e+02,  3.11718018e+03,  3.58602393e+03, -6.54319824e+02,
+        -7.67000732e+03,  1.06629922e+04, -2.09643594e+05, -1.24829367e+05,
+        -1.47453484e+05, -1.20763117e+05,  6.10380518e+03,  4.00307734e+04,
+        -1.47499375e+05,  2.58240859e+04,  3.32895938e+04,  3.47585234e+04,
+         1.87212109e+04, -1.19320078e+04, -1.40089828e+05,  2.89836426e+02,
+        -3.18257719e+05, -8.21275781e+03, -8.78112578e+04, -1.23851633e+05,
+        -9.13792578e+04, -9.43156953e+04, -2.05931125e+05,  5.92078906e+04,
+         4.76207383e+04, -8.99038281e+03, -1.28455758e+05, -1.46502781e+05,
+        -1.13381953e+04, -7.49300732e+03, -1.55213438e+05,  6.60943906e+04,
+        -1.48403781e+05,  3.66233984e+04,  9.74217969e+03, -1.63994969e+05,
+        -6.12220391e+04, -1.36595062e+05,  1.70810859e+04, -1.61385062e+05,
+        -7.22213828e+04,  6.06912578e+04, -1.08561961e+05,  2.30208047e+04,
+        -2.30994453e+04, -6.44272812e+04, -2.31365000e+05,  4.03743672e+04,
+         1.90641797e+04,  4.59545703e+04, -1.22889305e+05, -8.84031641e+04,
+        -1.61757594e+05,  1.48905518e+03,  3.20947734e+04,  7.53132891e+04,
+        -5.95894482e+03,  5.11611768e+03, -1.43172125e+05, -1.88158875e+05,
+        -3.50832438e+05,  2.08150830e+03, -1.58175469e+05,  3.60490547e+04,
+        -1.71455984e+05, -1.10756992e+05,  5.43582178e+03, -2.34401375e+05,
+        -1.00857523e+05, -9.67041328e+04, -1.60260281e+05, -7.72466797e+04,
+         5.21086172e+04,  1.14776172e+04,  7.63720078e+04,  2.39649922e+04,
+         2.41894922e+04, -9.09735156e+03, -6.35351016e+04, -3.53821953e+04,
+         3.26339297e+04, -2.03949453e+04,  1.37872734e+04, -1.24655430e+05,
+        -1.22779781e+05,  5.40791250e+04,  7.23483203e+04,  1.50678359e+04,
+         5.59148926e+02, -9.81328984e+04, -2.60515703e+04,  5.18205547e+04,
+         2.29931094e+04,  2.93304609e+04, -1.40070875e+05, -6.68697607e+03,
+        -2.43583969e+05,  3.63113516e+04, -2.04914031e+05, -1.24953602e+05,
+        -6.78903516e+04, -1.67571906e+05, -1.41736594e+05, -1.23389570e+05,
+        -6.91070703e+04, -6.89589766e+04, -7.36454141e+04, -1.30793828e+04,
+        -2.16405562e+05, -8.24812578e+04, -1.44233531e+05, -9.41363281e+03,
+         7.26657578e+04, -1.71400391e+05,  4.55330518e+03, -1.59409312e+05,
+         3.84804922e+04,  6.59752393e+03, -7.67592578e+04,  2.39449141e+04,
+         1.84506016e+04,  1.23376797e+04,  3.24004453e+04,  1.50949268e+03,
+        -1.04982695e+05, -1.33731625e+05,  3.92575547e+04,  1.08119297e+04,
+        -2.03850703e+04,  4.38629922e+04,  5.55066172e+04,  1.13210205e+03,
+         1.39818672e+04,  1.06256797e+04, -1.33901172e+05,  1.95616172e+04,
+         3.11380518e+03, -9.83600234e+04, -2.41433125e+05, -9.70176484e+04,
+         5.35788906e+04, -6.94320547e+04, -8.22888828e+04,  1.12860547e+04,
+        -1.78443406e+05, -2.38673062e+05, -2.60386953e+04, -4.09076367e+04,
+        -1.32867000e+05, -1.03556953e+04, -1.46632891e+04, -9.40332656e+04,
+         1.79563496e+04, -6.67838359e+04, -3.29974531e+05, -1.83812281e+05,
+        -6.31138232e+03, -8.51907109e+04,  8.94822578e+04,  2.27839893e+03,
+         1.65333643e+03, -1.35941312e+05, -1.54266516e+05], dtype=float32))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">modele</span><span class="o">.</span><span class="n">evaluation</span><span class="p">(</span><span class="n">XVar</span><span class="p">[</span><span class="n">echanTrain</span><span class="o">==</span><span class="mi">0</span><span class="p">,:],</span> <span class="n">yVar</span><span class="p">[</span><span class="n">echanTrain</span><span class="o">==</span><span class="mi">0</span><span class="p">,:])</span>
@@ -13354,10 +14945,36 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[98]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(686332.8319573486,
+ 14861.91090737141,
+ 670065.4557686842,
+ 651533.6428955282,
+ 654419.4593263615,
+ 76067368822.1389,
+ 2122637118.4237933)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">modele</span><span class="o">.</span><span class="n">cross_val</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -13367,13 +14984,1371 @@ div#notebook {
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1361/1361 [==============================] - 1s 447us/step - loss: 1954359748961.6223
+Epoch 2/20
+1361/1361 [==============================] - 0s 22us/step - loss: 798227599260.6848
+Epoch 3/20
+1361/1361 [==============================] - 0s 17us/step - loss: 279027010016.0235
+Epoch 4/20
+1361/1361 [==============================] - 0s 24us/step - loss: 104007507176.4879
+Epoch 5/20
+1361/1361 [==============================] - 0s 25us/step - loss: 64144674096.7171
+Epoch 6/20
+1361/1361 [==============================] - 0s 30us/step - loss: 30551342051.4093
+Epoch 7/20
+1361/1361 [==============================] - 0s 25us/step - loss: 5706908363.0507
+Epoch 8/20
+1361/1361 [==============================] - 0s 20us/step - loss: 2613830078.5422
+Epoch 9/20
+1361/1361 [==============================] - 0s 18us/step - loss: 4393721247.6943
+Epoch 10/20
+1361/1361 [==============================] - 0s 29us/step - loss: 3318897645.9427
+Epoch 11/20
+1361/1361 [==============================] - 0s 24us/step - loss: 1608925136.5525
+Epoch 12/20
+1361/1361 [==============================] - 0s 22us/step - loss: 1051197303.5827
+Epoch 13/20
+1361/1361 [==============================] - 0s 17us/step - loss: 923798543.5650
+Epoch 14/20
+1361/1361 [==============================] - 0s 26us/step - loss: 778518881.1521
+Epoch 15/20
+1361/1361 [==============================] - 0s 24us/step - loss: 685119388.9669
+Epoch 16/20
+1361/1361 [==============================] - 0s 25us/step - loss: 676878636.7201
+Epoch 17/20
+1361/1361 [==============================] - 0s 18us/step - loss: 623421145.2520
+Epoch 18/20
+1361/1361 [==============================] - 0s 23us/step - loss: 601368095.7649
+Epoch 19/20
+1361/1361 [==============================] - 0s 25us/step - loss: 555248244.6672
+Epoch 20/20
+1361/1361 [==============================] - 0s 18us/step - loss: 534608602.1455
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1382/1382 [==============================] - 1s 401us/step - loss: 13806327214737.9688
+Epoch 2/20
+1382/1382 [==============================] - 0s 22us/step - loss: 10287592245476.2148
+Epoch 3/20
+1382/1382 [==============================] - 0s 18us/step - loss: 7866300175076.9551
+Epoch 4/20
+1382/1382 [==============================] - 0s 19us/step - loss: 5637931888705.2041
+Epoch 5/20
+1382/1382 [==============================] - 0s 17us/step - loss: 3828133201863.6875
+Epoch 6/20
+1382/1382 [==============================] - 0s 20us/step - loss: 2598451968506.8135
+Epoch 7/20
+1382/1382 [==============================] - 0s 19us/step - loss: 1720905303201.5281
+Epoch 8/20
+1382/1382 [==============================] - 0s 24us/step - loss: 1109328557235.3110
+Epoch 9/20
+1382/1382 [==============================] - 0s 20us/step - loss: 659699596268.7351
+Epoch 10/20
+1382/1382 [==============================] - 0s 26us/step - loss: 453803604261.4182
+Epoch 11/20
+1382/1382 [==============================] - 0s 20us/step - loss: 219423090027.0680
+Epoch 12/20
+1382/1382 [==============================] - 0s 21us/step - loss: 130789665624.5441
+Epoch 13/20
+1382/1382 [==============================] - 0s 22us/step - loss: 68162843050.7902
+Epoch 14/20
+1382/1382 [==============================] - 0s 19us/step - loss: 41465097571.6585
+Epoch 15/20
+1382/1382 [==============================] - 0s 21us/step - loss: 23240306098.1997
+Epoch 16/20
+1382/1382 [==============================] - 0s 20us/step - loss: 15172695255.6179
+Epoch 17/20
+1382/1382 [==============================] - 0s 20us/step - loss: 11803841814.5991
+Epoch 18/20
+1382/1382 [==============================] - ETA: 0s - loss: 15283758080.000 - 0s 18us/step - loss: 10984537827.4732
+Epoch 19/20
+1382/1382 [==============================] - 0s 22us/step - loss: 10340728834.9638
+Epoch 20/20
+1382/1382 [==============================] - 0s 23us/step - loss: 9965125811.3111
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1391/1391 [==============================] - 1s 403us/step - loss: 7613069513967.2520
+Epoch 2/20
+1391/1391 [==============================] - 0s 18us/step - loss: 4877173861749.2334
+Epoch 3/20
+1391/1391 [==============================] - 0s 22us/step - loss: 2918997581511.8677
+Epoch 4/20
+1391/1391 [==============================] - 0s 24us/step - loss: 1464473277632.1382
+Epoch 5/20
+1391/1391 [==============================] - 0s 21us/step - loss: 794642836629.4408
+Epoch 6/20
+1391/1391 [==============================] - 0s 18us/step - loss: 403185134812.1121
+Epoch 7/20
+1391/1391 [==============================] - 0s 22us/step - loss: 137855530841.6276
+Epoch 8/20
+1391/1391 [==============================] - 0s 23us/step - loss: 74635348322.8296
+Epoch 9/20
+1391/1391 [==============================] - 0s 22us/step - loss: 45627602848.2991
+Epoch 10/20
+1391/1391 [==============================] - 0s 22us/step - loss: 33351417378.9676
+Epoch 11/20
+1391/1391 [==============================] - 0s 18us/step - loss: 24272006511.3444
+Epoch 12/20
+1391/1391 [==============================] - 0s 20us/step - loss: 15625796167.0395
+Epoch 13/20
+1391/1391 [==============================] - 0s 25us/step - loss: 9583955354.4098
+Epoch 14/20
+1391/1391 [==============================] - 0s 28us/step - loss: 6344792361.4091
+Epoch 15/20
+1391/1391 [==============================] - 0s 19us/step - loss: 4698621442.9446
+Epoch 16/20
+1391/1391 [==============================] - 0s 19us/step - loss: 3904325377.4723
+Epoch 17/20
+1391/1391 [==============================] - 0s 24us/step - loss: 3451280584.9720
+Epoch 18/20
+1391/1391 [==============================] - 0s 18us/step - loss: 3141509457.3458
+Epoch 19/20
+1391/1391 [==============================] - 0s 20us/step - loss: 2883534582.9820
+Epoch 20/20
+1391/1391 [==============================] - 0s 24us/step - loss: 2699597832.6499
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1370/1370 [==============================] - 1s 414us/step - loss: 1292155312083.1533
+Epoch 2/20
+1370/1370 [==============================] - 0s 22us/step - loss: 608481335131.5620
+Epoch 3/20
+1370/1370 [==============================] - 0s 20us/step - loss: 252339031854.7153
+Epoch 4/20
+1370/1370 [==============================] - 0s 19us/step - loss: 69567558379.4453
+Epoch 5/20
+1370/1370 [==============================] - 0s 14us/step - loss: 28730452072.6423
+Epoch 6/20
+1370/1370 [==============================] - 0s 50us/step - loss: 18670524984.0584
+Epoch 7/20
+1370/1370 [==============================] - 0s 21us/step - loss: 10745837859.5037
+Epoch 8/20
+1370/1370 [==============================] - 0s 23us/step - loss: 7809706604.3796
+Epoch 9/20
+1370/1370 [==============================] - 0s 20us/step - loss: 7231635007.5328
+Epoch 10/20
+1370/1370 [==============================] - 0s 20us/step - loss: 6118146541.3139
+Epoch 11/20
+1370/1370 [==============================] - 0s 20us/step - loss: 4610160641.8686
+Epoch 12/20
+1370/1370 [==============================] - 0s 20us/step - loss: 3720213649.7518
+Epoch 13/20
+1370/1370 [==============================] - 0s 19us/step - loss: 3446542395.7956
+Epoch 14/20
+1370/1370 [==============================] - 0s 15us/step - loss: 3226969007.6496
+Epoch 15/20
+1370/1370 [==============================] - 0s 17us/step - loss: 2934700497.2847
+Epoch 16/20
+1370/1370 [==============================] - 0s 23us/step - loss: 2673288946.9197
+Epoch 17/20
+1370/1370 [==============================] - 0s 18us/step - loss: 2434434348.8467
+Epoch 18/20
+1370/1370 [==============================] - 0s 17us/step - loss: 2248332444.9635
+Epoch 19/20
+1370/1370 [==============================] - 0s 15us/step - loss: 2065385646.7153
+Epoch 20/20
+1370/1370 [==============================] - 0s 15us/step - loss: 1906010737.9854
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1367/1367 [==============================] - 1s 418us/step - loss: 27309510927660.3789
+Epoch 2/20
+1367/1367 [==============================] - 0s 25us/step - loss: 21927886582979.5117
+Epoch 3/20
+1367/1367 [==============================] - 0s 20us/step - loss: 16986903005808.7383
+Epoch 4/20
+1367/1367 [==============================] - 0s 18us/step - loss: 13878404780298.6758
+Epoch 5/20
+1367/1367 [==============================] - 0s 21us/step - loss: 10702951233918.0332
+Epoch 6/20
+1367/1367 [==============================] - 0s 25us/step - loss: 8303456291836.2539
+Epoch 7/20
+1367/1367 [==============================] - 0s 22us/step - loss: 6245486539575.9951
+Epoch 8/20
+1367/1367 [==============================] - 0s 24us/step - loss: 4718631972165.8516
+Epoch 9/20
+1367/1367 [==============================] - 0s 21us/step - loss: 3379101456580.2607
+Epoch 10/20
+1367/1367 [==============================] - 0s 26us/step - loss: 2488078143514.9673
+Epoch 11/20
+1367/1367 [==============================] - 0s 18us/step - loss: 1759246145049.0945
+Epoch 12/20
+1367/1367 [==============================] - 0s 24us/step - loss: 1206048468401.7205
+Epoch 13/20
+1367/1367 [==============================] - 0s 18us/step - loss: 810924773786.4989
+Epoch 14/20
+1367/1367 [==============================] - 0s 21us/step - loss: 583242015019.6342
+Epoch 15/20
+1367/1367 [==============================] - 0s 20us/step - loss: 409043661826.9963
+Epoch 16/20
+1367/1367 [==============================] - 0s 23us/step - loss: 267986569136.5969
+Epoch 17/20
+1367/1367 [==============================] - 0s 24us/step - loss: 168591037374.8296
+Epoch 18/20
+1367/1367 [==============================] - 0s 24us/step - loss: 105252445939.0783
+Epoch 19/20
+1367/1367 [==============================] - 0s 18us/step - loss: 69435356866.3877
+Epoch 20/20
+1367/1367 [==============================] - 0s 23us/step - loss: 44703444341.7937
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1373/1373 [==============================] - 1s 426us/step - loss: 981161887975.2018
+Epoch 2/20
+1373/1373 [==============================] - 0s 22us/step - loss: 746565227686.3162
+Epoch 3/20
+1373/1373 [==============================] - 0s 23us/step - loss: 538468574430.9978
+Epoch 4/20
+1373/1373 [==============================] - 0s 19us/step - loss: 371423185067.5368
+Epoch 5/20
+1373/1373 [==============================] - 0s 18us/step - loss: 257051112620.2826
+Epoch 6/20
+1373/1373 [==============================] - 0s 20us/step - loss: 166954562803.8806
+Epoch 7/20
+1373/1373 [==============================] - 0s 22us/step - loss: 102042393135.3591
+Epoch 8/20
+1373/1373 [==============================] - 0s 23us/step - loss: 56246721491.9971
+Epoch 9/20
+1373/1373 [==============================] - 0s 24us/step - loss: 30746029648.9206
+Epoch 10/20
+1373/1373 [==============================] - 0s 23us/step - loss: 15630003502.0539
+Epoch 11/20
+1373/1373 [==============================] - 0s 20us/step - loss: 7187846271.5339
+Epoch 12/20
+1373/1373 [==============================] - 0s 21us/step - loss: 3025726665.5557
+Epoch 13/20
+1373/1373 [==============================] - 0s 16us/step - loss: 1230908183.5630
+Epoch 14/20
+1373/1373 [==============================] - 0s 20us/step - loss: 574386624.6992
+Epoch 15/20
+1373/1373 [==============================] - 0s 13us/step - loss: 366977658.1034
+Epoch 16/20
+1373/1373 [==============================] - 0s 16us/step - loss: 325434282.4647
+Epoch 17/20
+1373/1373 [==============================] - 0s 24us/step - loss: 454760422.3627
+Epoch 18/20
+1373/1373 [==============================] - 0s 16us/step - loss: 394724092.6905
+Epoch 19/20
+1373/1373 [==============================] - 0s 15us/step - loss: 354612693.1508
+Epoch 20/20
+1373/1373 [==============================] - 0s 19us/step - loss: 584510812.9002
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1363/1363 [==============================] - 1s 443us/step - loss: 7390924573268.5186
+Epoch 2/20
+1363/1363 [==============================] - 0s 21us/step - loss: 4243798783379.4399
+Epoch 3/20
+1363/1363 [==============================] - 0s 19us/step - loss: 2364297692999.1841
+Epoch 4/20
+1363/1363 [==============================] - 0s 17us/step - loss: 1385668350616.1350
+Epoch 5/20
+1363/1363 [==============================] - 0s 21us/step - loss: 927998769637.3295
+Epoch 6/20
+1363/1363 [==============================] - 0s 19us/step - loss: 704742852411.1636
+Epoch 7/20
+1363/1363 [==============================] - 0s 17us/step - loss: 531263967956.2377
+Epoch 8/20
+1363/1363 [==============================] - 0s 24us/step - loss: 390913170308.0381
+Epoch 9/20
+1363/1363 [==============================] - 0s 25us/step - loss: 282372544089.7784
+Epoch 10/20
+1363/1363 [==============================] - 0s 30us/step - loss: 207930921660.1966
+Epoch 11/20
+1363/1363 [==============================] - 0s 19us/step - loss: 148264249862.3859
+Epoch 12/20
+1363/1363 [==============================] - 0s 23us/step - loss: 106537275467.1284
+Epoch 13/20
+1363/1363 [==============================] - 0s 23us/step - loss: 73821711710.8496
+Epoch 14/20
+1363/1363 [==============================] - 0s 19us/step - loss: 51503702695.1607
+Epoch 15/20
+1363/1363 [==============================] - 0s 39us/step - loss: 35090125999.0492
+Epoch 16/20
+1363/1363 [==============================] - 0s 21us/step - loss: 23922251989.3646
+Epoch 17/20
+1363/1363 [==============================] - 0s 21us/step - loss: 16045961333.2003
+Epoch 18/20
+1363/1363 [==============================] - 0s 26us/step - loss: 10824560057.0037
+Epoch 19/20
+1363/1363 [==============================] - 0s 26us/step - loss: 7295647889.7491
+Epoch 20/20
+1363/1363 [==============================] - 0s 22us/step - loss: 5033655420.3375
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1354/1354 [==============================] - 1s 409us/step - loss: 4964952146355.6162
+Epoch 2/20
+1354/1354 [==============================] - 0s 20us/step - loss: 3137120454132.6558
+Epoch 3/20
+1354/1354 [==============================] - 0s 21us/step - loss: 1794251812313.4297
+Epoch 4/20
+1354/1354 [==============================] - 0s 21us/step - loss: 906559256833.1344
+Epoch 5/20
+1354/1354 [==============================] - 0s 14us/step - loss: 453937653974.7828
+Epoch 6/20
+1354/1354 [==============================] - 0s 19us/step - loss: 167239397430.4520
+Epoch 7/20
+1354/1354 [==============================] - 0s 20us/step - loss: 59715978879.8109
+Epoch 8/20
+1354/1354 [==============================] - 0s 19us/step - loss: 25609840655.1256
+Epoch 9/20
+1354/1354 [==============================] - 0s 21us/step - loss: 15298763337.3589
+Epoch 10/20
+1354/1354 [==============================] - 0s 20us/step - loss: 11949768191.2437
+Epoch 11/20
+1354/1354 [==============================] - 0s 23us/step - loss: 8956306630.1448
+Epoch 12/20
+1354/1354 [==============================] - 0s 24us/step - loss: 6927517244.5022
+Epoch 13/20
+1354/1354 [==============================] - 0s 17us/step - loss: 5618384454.3338
+Epoch 14/20
+1354/1354 [==============================] - 0s 20us/step - loss: 5026969720.6263
+Epoch 15/20
+1354/1354 [==============================] - 0s 16us/step - loss: 4722100711.4210
+Epoch 16/20
+1354/1354 [==============================] - 0s 17us/step - loss: 4398458131.2851
+Epoch 17/20
+1354/1354 [==============================] - 0s 22us/step - loss: 4003238911.2437
+Epoch 18/20
+1354/1354 [==============================] - 0s 27us/step - loss: 3711787179.6750
+Epoch 19/20
+1354/1354 [==============================] - 0s 22us/step - loss: 3407283375.4564
+Epoch 20/20
+1354/1354 [==============================] - 0s 19us/step - loss: 3165609560.4845
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1383/1383 [==============================] - 1s 440us/step - loss: 1736942776222.2646
+Epoch 2/20
+1383/1383 [==============================] - 0s 20us/step - loss: 1270433735953.2146
+Epoch 3/20
+1383/1383 [==============================] - 0s 22us/step - loss: 1020708073078.0969
+Epoch 4/20
+1383/1383 [==============================] - 0s 20us/step - loss: 778451419894.1895
+Epoch 5/20
+1383/1383 [==============================] - 0s 19us/step - loss: 594384733735.6124
+Epoch 6/20
+1383/1383 [==============================] - 0s 19us/step - loss: 454183700386.7072
+Epoch 7/20
+1383/1383 [==============================] - 0s 23us/step - loss: 331399380221.9639
+Epoch 8/20
+1383/1383 [==============================] - 0s 18us/step - loss: 244542156998.4324
+Epoch 9/20
+1383/1383 [==============================] - 0s 29us/step - loss: 178061948630.3514
+Epoch 10/20
+1383/1383 [==============================] - 0s 19us/step - loss: 124111487953.3536
+Epoch 11/20
+1383/1383 [==============================] - 0s 17us/step - loss: 86479245288.3066
+Epoch 12/20
+1383/1383 [==============================] - 0s 24us/step - loss: 57243110485.1482
+Epoch 13/20
+1383/1383 [==============================] - 0s 20us/step - loss: 38060162002.8344
+Epoch 14/20
+1383/1383 [==============================] - 0s 19us/step - loss: 24686248128.5090
+Epoch 15/20
+1383/1383 [==============================] - 0s 21us/step - loss: 15143824929.6891
+Epoch 16/20
+1383/1383 [==============================] - 0s 19us/step - loss: 9457930404.3731
+Epoch 17/20
+1383/1383 [==============================] - 0s 18us/step - loss: 5885641439.9769
+Epoch 18/20
+1383/1383 [==============================] - 0s 21us/step - loss: 3774662247.4736
+Epoch 19/20
+1383/1383 [==============================] - 0s 29us/step - loss: 2521790106.9328
+Epoch 20/20
+1383/1383 [==============================] - 0s 22us/step - loss: 1800978462.5423
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1372/1372 [==============================] - 1s 396us/step - loss: 50163509104.6997
+Epoch 2/20
+1372/1372 [==============================] - 0s 20us/step - loss: 4586416816.8863
+Epoch 3/20
+1372/1372 [==============================] - 0s 16us/step - loss: 7857199660.7813
+Epoch 4/20
+1372/1372 [==============================] - 0s 18us/step - loss: 1500525451.9417
+Epoch 5/20
+1372/1372 [==============================] - 0s 16us/step - loss: 1787821754.2157
+Epoch 6/20
+1372/1372 [==============================] - 0s 19us/step - loss: 1055764302.7405
+Epoch 7/20
+1372/1372 [==============================] - 0s 18us/step - loss: 437563193.9359
+Epoch 8/20
+1372/1372 [==============================] - 0s 19us/step - loss: 434742428.4082
+Epoch 9/20
+1372/1372 [==============================] - 0s 19us/step - loss: 183859911.6968
+Epoch 10/20
+1372/1372 [==============================] - 0s 18us/step - loss: 200385856.9329
+Epoch 11/20
+1372/1372 [==============================] - 0s 18us/step - loss: 140944531.2653
+Epoch 12/20
+1372/1372 [==============================] - 0s 21us/step - loss: 137555142.5306
+Epoch 13/20
+1372/1372 [==============================] - 0s 20us/step - loss: 121854157.2012
+Epoch 14/20
+1372/1372 [==============================] - 0s 20us/step - loss: 126487563.7085
+Epoch 15/20
+1372/1372 [==============================] - 0s 20us/step - loss: 103898453.1778
+Epoch 16/20
+1372/1372 [==============================] - 0s 20us/step - loss: 92508213.5044
+Epoch 17/20
+1372/1372 [==============================] - 0s 17us/step - loss: 111557678.6939
+Epoch 18/20
+1372/1372 [==============================] - 0s 18us/step - loss: 80989351.2770
+Epoch 19/20
+1372/1372 [==============================] - 0s 24us/step - loss: 108726576.4198
+Epoch 20/20
+1372/1372 [==============================] - 0s 19us/step - loss: 189041573.6676
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[99]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(array([[7.35788797e+05, 8.95974676e+03, 7.84430832e+05, 6.70682317e+05,
+         6.75032455e+05, 1.56112770e+09, 4.21022989e+07],
+        [7.05474715e+05, 1.24121647e+04, 5.46031065e+05, 5.59700365e+05,
+         5.43188595e+05, 8.31578655e+09, 2.33327218e+08],
+        [8.60978013e+05, 7.11566215e+03, 8.33583332e+05, 8.08916790e+05,
+         8.00938443e+05, 2.64034436e+09, 7.50434838e+07],
+        [8.70082669e+05, 1.27957125e+04, 1.03836610e+06, 9.45746817e+05,
+         9.40113362e+05, 1.66164656e+09, 4.63006230e+07],
+        [8.55938374e+05, 1.47511956e+04, 7.76502341e+05, 8.09943186e+05,
+         8.02685740e+05, 3.24988703e+09, 8.97551541e+07],
+        [7.84768201e+05, 5.37469842e+04, 8.63086546e+05, 7.94745930e+05,
+         8.32364490e+05, 4.53751973e+08, 1.18738258e+07],
+        [7.02878018e+05, 1.63572213e+04, 5.36019247e+05, 5.25009544e+05,
+         5.47837327e+05, 3.76421166e+09, 1.03966403e+08],
+        [8.05058465e+05, 6.17897014e+04, 9.92747123e+05, 7.97172102e+05,
+         8.00836891e+05, 4.13598666e+09, 1.18192005e+08],
+        [7.62380266e+05, 3.13932925e+04, 8.06925616e+05, 7.58165207e+05,
+         8.21016761e+05, 1.71163288e+09, 4.65473913e+07],
+        [7.56876670e+05, 1.00110486e+04, 6.66385575e+05, 7.09239066e+05,
+         7.08743627e+05, 1.41376151e+08, 3.91555265e+06]]),
+ array([7.84022419e+05, 2.29332730e+04, 7.84407778e+05, 7.37932132e+05,
+        7.47275769e+05, 2.76357515e+09, 7.71023956e+07]),
+ array([5.93543753e+04, 1.86198109e+04, 1.57964491e+05, 1.19585257e+05,
+        1.21166824e+05, 2.23475822e+09, 6.30071440e+07]))</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">resultat</span><span class="p">(</span><span class="n">modele</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1372/1372 [==============================] - 1s 428us/step - loss: 580784259358.6006
+Epoch 2/20
+1372/1372 [==============================] - 0s 24us/step - loss: 135421063275.4752
+Epoch 3/20
+1372/1372 [==============================] - 0s 22us/step - loss: 32119193002.9155
+Epoch 4/20
+1372/1372 [==============================] - 0s 23us/step - loss: 33504357268.5248
+Epoch 5/20
+1372/1372 [==============================] - 0s 20us/step - loss: 16841059013.0379
+Epoch 6/20
+1372/1372 [==============================] - 0s 28us/step - loss: 7074093103.7668
+Epoch 7/20
+1372/1372 [==============================] - 0s 23us/step - loss: 6946348882.0991
+Epoch 8/20
+1372/1372 [==============================] - 0s 24us/step - loss: 2131199562.1224
+Epoch 9/20
+1372/1372 [==============================] - 0s 22us/step - loss: 1040576380.4548
+Epoch 10/20
+1372/1372 [==============================] - 0s 31us/step - loss: 1101976521.5160
+Epoch 11/20
+1372/1372 [==============================] - 0s 30us/step - loss: 433059393.2128
+Epoch 12/20
+1372/1372 [==============================] - 0s 26us/step - loss: 450643541.2711
+Epoch 13/20
+1372/1372 [==============================] - 0s 23us/step - loss: 360004685.9009
+Epoch 14/20
+1372/1372 [==============================] - 0s 23us/step - loss: 267247369.6560
+Epoch 15/20
+1372/1372 [==============================] - 0s 21us/step - loss: 294638246.5773
+Epoch 16/20
+1372/1372 [==============================] - 0s 26us/step - loss: 276892298.6356
+Epoch 17/20
+1372/1372 [==============================] - 0s 25us/step - loss: 252161786.5423
+Epoch 18/20
+1372/1372 [==============================] - 0s 21us/step - loss: 244231279.0671
+Epoch 19/20
+1372/1372 [==============================] - 0s 23us/step - loss: 240668060.7347
+Epoch 20/20
+1372/1372 [==============================] - 0s 19us/step - loss: 239008318.9271
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1390/1390 [==============================] - 1s 393us/step - loss: 5752802050519.4824
+Epoch 2/20
+1390/1390 [==============================] - 0s 19us/step - loss: 3264962946143.7695
+Epoch 3/20
+1390/1390 [==============================] - 0s 19us/step - loss: 1686315623991.2520
+Epoch 4/20
+1390/1390 [==============================] - 0s 20us/step - loss: 568652011269.5251
+Epoch 5/20
+1390/1390 [==============================] - 0s 22us/step - loss: 145938719596.6619
+Epoch 6/20
+1390/1390 [==============================] - 0s 17us/step - loss: 7482692272.8058
+Epoch 7/20
+1390/1390 [==============================] - 0s 19us/step - loss: 22648603139.6835
+Epoch 8/20
+1390/1390 [==============================] - 0s 23us/step - loss: 37540617223.3669
+Epoch 9/20
+1390/1390 [==============================] - 0s 23us/step - loss: 20826896258.7626
+Epoch 10/20
+1390/1390 [==============================] - 0s 20us/step - loss: 7131789842.4173
+Epoch 11/20
+1390/1390 [==============================] - 0s 29us/step - loss: 1460549794.9928
+Epoch 12/20
+1390/1390 [==============================] - 0s 19us/step - loss: 2191854288.1151
+Epoch 13/20
+1390/1390 [==============================] - 0s 20us/step - loss: 2210000356.8345
+Epoch 14/20
+1390/1390 [==============================] - 0s 20us/step - loss: 1362684465.7266
+Epoch 15/20
+1390/1390 [==============================] - 0s 23us/step - loss: 972934350.2734
+Epoch 16/20
+1390/1390 [==============================] - 0s 24us/step - loss: 939720321.8417
+Epoch 17/20
+1390/1390 [==============================] - 0s 24us/step - loss: 882907784.2878
+Epoch 18/20
+1390/1390 [==============================] - 0s 19us/step - loss: 776860091.3957
+Epoch 19/20
+1390/1390 [==============================] - 0s 23us/step - loss: 706109826.3022
+Epoch 20/20
+1390/1390 [==============================] - 0s 31us/step - loss: 669123590.2158
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1358/1358 [==============================] - 1s 457us/step - loss: 5863569954559.6230
+Epoch 2/20
+1358/1358 [==============================] - 0s 25us/step - loss: 4183458222858.1792
+Epoch 3/20
+1358/1358 [==============================] - 0s 23us/step - loss: 2843154630803.7939
+Epoch 4/20
+1358/1358 [==============================] - 0s 26us/step - loss: 1780772489556.8306
+Epoch 5/20
+1358/1358 [==============================] - 0s 21us/step - loss: 1098480064979.5111
+Epoch 6/20
+1358/1358 [==============================] - 0s 20us/step - loss: 675808962575.0809
+Epoch 7/20
+1358/1358 [==============================] - 0s 27us/step - loss: 406614614402.0736
+Epoch 8/20
+1358/1358 [==============================] - 0s 23us/step - loss: 215204009763.8174
+Epoch 9/20
+1358/1358 [==============================] - 0s 25us/step - loss: 94309310910.3976
+Epoch 10/20
+1358/1358 [==============================] - 0s 20us/step - loss: 44411178422.8571
+Epoch 11/20
+1358/1358 [==============================] - 0s 23us/step - loss: 18460149412.3829
+Epoch 12/20
+1358/1358 [==============================] - 0s 27us/step - loss: 6758692503.5641
+Epoch 13/20
+1358/1358 [==============================] - 0s 24us/step - loss: 5688560884.6892
+Epoch 14/20
+1358/1358 [==============================] - 0s 22us/step - loss: 5698527976.2474
+Epoch 15/20
+1358/1358 [==============================] - 0s 24us/step - loss: 5666699441.2018
+Epoch 16/20
+1358/1358 [==============================] - 0s 26us/step - loss: 5385223556.3358
+Epoch 17/20
+1358/1358 [==============================] - 0s 20us/step - loss: 5008904317.9264
+Epoch 18/20
+1358/1358 [==============================] - 0s 20us/step - loss: 4659416758.4801
+Epoch 19/20
+1358/1358 [==============================] - 0s 25us/step - loss: 4344249052.5596
+Epoch 20/20
+1358/1358 [==============================] - 0s 20us/step - loss: 4096067266.1679
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1370/1370 [==============================] - 1s 397us/step - loss: 7931440905402.8613
+Epoch 2/20
+1370/1370 [==============================] - 0s 20us/step - loss: 5149513487980.3799
+Epoch 3/20
+1370/1370 [==============================] - 0s 23us/step - loss: 3236024103539.8540
+Epoch 4/20
+1370/1370 [==============================] - 0s 20us/step - loss: 2068179203333.6060
+Epoch 5/20
+1370/1370 [==============================] - 0s 20us/step - loss: 972590118328.9927
+Epoch 6/20
+1370/1370 [==============================] - 0s 17us/step - loss: 490837877154.5693
+Epoch 7/20
+1370/1370 [==============================] - 0s 13us/step - loss: 182508316268.3796
+Epoch 8/20
+1370/1370 [==============================] - 0s 17us/step - loss: 35347313776.1168
+Epoch 9/20
+1370/1370 [==============================] - 0s 18us/step - loss: 8905051908.6715
+Epoch 10/20
+1370/1370 [==============================] - 0s 21us/step - loss: 1480793544.8759
+Epoch 11/20
+1370/1370 [==============================] - 0s 19us/step - loss: 3358168151.8248
+Epoch 12/20
+1370/1370 [==============================] - 0s 24us/step - loss: 4693017945.6934
+Epoch 13/20
+1370/1370 [==============================] - 0s 19us/step - loss: 4043299124.3212
+Epoch 14/20
+1370/1370 [==============================] - 0s 21us/step - loss: 2776036280.0584
+Epoch 15/20
+1370/1370 [==============================] - 0s 19us/step - loss: 1771869637.1387
+Epoch 16/20
+1370/1370 [==============================] - 0s 24us/step - loss: 1235925011.6204
+Epoch 17/20
+1370/1370 [==============================] - 0s 20us/step - loss: 1122644574.3650
+Epoch 18/20
+1370/1370 [==============================] - 0s 19us/step - loss: 1073038391.1241
+Epoch 19/20
+1370/1370 [==============================] - 0s 24us/step - loss: 1053002608.1168
+Epoch 20/20
+1370/1370 [==============================] - 0s 20us/step - loss: 1019009847.1241
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1377/1377 [==============================] - 1s 437us/step - loss: 322941683707.5381
+Epoch 2/20
+1377/1377 [==============================] - 0s 22us/step - loss: 18496540547.0675
+Epoch 3/20
+1377/1377 [==============================] - 0s 20us/step - loss: 25564150192.4299
+Epoch 4/20
+1377/1377 [==============================] - 0s 22us/step - loss: 11907701535.7908
+Epoch 5/20
+1377/1377 [==============================] - 0s 20us/step - loss: 3850274509.0603
+Epoch 6/20
+1377/1377 [==============================] - 0s 25us/step - loss: 3711319332.9964
+Epoch 7/20
+1377/1377 [==============================] - 0s 23us/step - loss: 1279937872.8715
+Epoch 8/20
+1377/1377 [==============================] - 0s 22us/step - loss: 1026399027.2767
+Epoch 9/20
+1377/1377 [==============================] - 0s 21us/step - loss: 861821975.5527
+Epoch 10/20
+1377/1377 [==============================] - 0s 18us/step - loss: 343266265.1561
+Epoch 11/20
+1377/1377 [==============================] - 0s 21us/step - loss: 490409200.3370
+Epoch 12/20
+1377/1377 [==============================] - 0s 22us/step - loss: 327644556.5025
+Epoch 13/20
+1377/1377 [==============================] - 0s 15us/step - loss: 426651047.9477
+Epoch 14/20
+1377/1377 [==============================] - 0s 17us/step - loss: 337336679.0065
+Epoch 15/20
+1377/1377 [==============================] - 0s 20us/step - loss: 329913911.7967
+Epoch 16/20
+1377/1377 [==============================] - 0s 30us/step - loss: 378306911.6049
+Epoch 17/20
+1377/1377 [==============================] - 0s 19us/step - loss: 332806694.9717
+Epoch 18/20
+1377/1377 [==============================] - 0s 25us/step - loss: 311973756.4561
+Epoch 19/20
+1377/1377 [==============================] - 0s 20us/step - loss: 324954342.2890
+Epoch 20/20
+1377/1377 [==============================] - 0s 21us/step - loss: 366093449.2956
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1364/1364 [==============================] - 1s 397us/step - loss: 118033349006.6393
+Epoch 2/20
+1364/1364 [==============================] - 0s 22us/step - loss: 26145337611.2610
+Epoch 3/20
+1364/1364 [==============================] - 0s 19us/step - loss: 10726039573.0205
+Epoch 4/20
+1364/1364 [==============================] - 0s 20us/step - loss: 8349568886.6158
+Epoch 5/20
+1364/1364 [==============================] - 0s 22us/step - loss: 2050705557.8651
+Epoch 6/20
+1364/1364 [==============================] - 0s 17us/step - loss: 2456597386.9795
+Epoch 7/20
+1364/1364 [==============================] - 0s 24us/step - loss: 482168277.9589
+Epoch 8/20
+1364/1364 [==============================] - 0s 18us/step - loss: 441768953.4780
+Epoch 9/20
+1364/1364 [==============================] - 0s 20us/step - loss: 342967333.8651
+Epoch 10/20
+1364/1364 [==============================] - 0s 20us/step - loss: 253754834.4399
+Epoch 11/20
+1364/1364 [==============================] - 0s 21us/step - loss: 258850104.2111
+Epoch 12/20
+1364/1364 [==============================] - 0s 16us/step - loss: 254692575.3431
+Epoch 13/20
+1364/1364 [==============================] - 0s 24us/step - loss: 212488608.7507
+Epoch 14/20
+1364/1364 [==============================] - 0s 24us/step - loss: 207949582.9208
+Epoch 15/20
+1364/1364 [==============================] - 0s 19us/step - loss: 186470465.0323
+Epoch 16/20
+1364/1364 [==============================] - 0s 22us/step - loss: 199479104.0352
+Epoch 17/20
+1364/1364 [==============================] - 0s 22us/step - loss: 190826443.9413
+Epoch 18/20
+1364/1364 [==============================] - 0s 24us/step - loss: 166155742.2405
+Epoch 19/20
+1364/1364 [==============================] - 0s 22us/step - loss: 157555360.7273
+Epoch 20/20
+1364/1364 [==============================] - 0s 23us/step - loss: 161975383.8358
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1385/1385 [==============================] - 1s 437us/step - loss: 3641746314857.3574
+Epoch 2/20
+1385/1385 [==============================] - 0s 21us/step - loss: 2189030197092.7363
+Epoch 3/20
+1385/1385 [==============================] - 0s 19us/step - loss: 988423339381.3718
+Epoch 4/20
+1385/1385 [==============================] - 0s 21us/step - loss: 362932153539.9278
+Epoch 5/20
+1385/1385 [==============================] - 0s 20us/step - loss: 51312047976.4332
+Epoch 6/20
+1385/1385 [==============================] - 0s 21us/step - loss: 4556316537.0686
+Epoch 7/20
+1385/1385 [==============================] - 0s 20us/step - loss: 10384215198.9603
+Epoch 8/20
+1385/1385 [==============================] - 0s 23us/step - loss: 15625222809.4152
+Epoch 9/20
+1385/1385 [==============================] - 0s 16us/step - loss: 11888737433.4152
+Epoch 10/20
+1385/1385 [==============================] - 0s 20us/step - loss: 4872323818.7437
+Epoch 11/20
+1385/1385 [==============================] - 0s 22us/step - loss: 1304232112.9819
+Epoch 12/20
+1385/1385 [==============================] - 0s 20us/step - loss: 789514009.6462
+Epoch 13/20
+1385/1385 [==============================] - 0s 20us/step - loss: 945364137.1264
+Epoch 14/20
+1385/1385 [==============================] - 0s 24us/step - loss: 918196923.2635
+Epoch 15/20
+1385/1385 [==============================] - 0s 27us/step - loss: 715713980.9964
+Epoch 16/20
+1385/1385 [==============================] - 0s 18us/step - loss: 580050683.1480
+Epoch 17/20
+1385/1385 [==============================] - 0s 23us/step - loss: 534798008.7220
+Epoch 18/20
+1385/1385 [==============================] - 0s 21us/step - loss: 508630050.4260
+Epoch 19/20
+1385/1385 [==============================] - 0s 19us/step - loss: 480519177.0108
+Epoch 20/20
+1385/1385 [==============================] - 0s 18us/step - loss: 451592376.0289
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1377/1377 [==============================] - 1s 424us/step - loss: 6088593628285.6758
+Epoch 2/20
+1377/1377 [==============================] - 0s 19us/step - loss: 3490664143117.1997
+Epoch 3/20
+1377/1377 [==============================] - 0s 19us/step - loss: 1875287601488.1277
+Epoch 4/20
+1377/1377 [==============================] - 0s 20us/step - loss: 742565686763.5497
+Epoch 5/20
+1377/1377 [==============================] - 0s 20us/step - loss: 260616827186.3820
+Epoch 6/20
+1377/1377 [==============================] - 0s 19us/step - loss: 28191290173.9085
+Epoch 7/20
+1377/1377 [==============================] - 0s 20us/step - loss: 9283957872.2905
+Epoch 8/20
+1377/1377 [==============================] - 0s 20us/step - loss: 24784274227.4975
+Epoch 9/20
+1377/1377 [==============================] - 0s 24us/step - loss: 28267424771.7182
+Epoch 10/20
+1377/1377 [==============================] - 0s 33us/step - loss: 16615770738.1496
+Epoch 11/20
+1377/1377 [==============================] - 0s 22us/step - loss: 7149004693.2869
+Epoch 12/20
+1377/1377 [==============================] - 0s 16us/step - loss: 3804170731.9216
+Epoch 13/20
+1377/1377 [==============================] - 0s 21us/step - loss: 3720161122.9049
+Epoch 14/20
+1377/1377 [==============================] - 0s 23us/step - loss: 3905337303.9361
+Epoch 15/20
+1377/1377 [==============================] - 0s 16us/step - loss: 3508594405.9724
+Epoch 16/20
+1377/1377 [==============================] - 0s 21us/step - loss: 2907548037.4844
+Epoch 17/20
+1377/1377 [==============================] - 0s 24us/step - loss: 2598068302.6405
+Epoch 18/20
+1377/1377 [==============================] - 0s 17us/step - loss: 2507101934.5243
+Epoch 19/20
+1377/1377 [==============================] - 0s 17us/step - loss: 2293527752.5984
+Epoch 20/20
+1377/1377 [==============================] - 0s 23us/step - loss: 2117299498.7596
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1342/1342 [==============================] - 1s 460us/step - loss: 1589411155729.9312
+Epoch 2/20
+1342/1342 [==============================] - 0s 23us/step - loss: 584870777326.4501
+Epoch 3/20
+1342/1342 [==============================] - 0s 22us/step - loss: 95123645227.8748
+Epoch 4/20
+1342/1342 [==============================] - 0s 19us/step - loss: 6478933619.6006
+Epoch 5/20
+1342/1342 [==============================] - 0s 20us/step - loss: 13326074258.8852
+Epoch 6/20
+1342/1342 [==============================] - 0s 27us/step - loss: 22800162840.4173
+Epoch 7/20
+1342/1342 [==============================] - 0s 19us/step - loss: 14605294852.9598
+Epoch 8/20
+1342/1342 [==============================] - 0s 17us/step - loss: 5179547147.4456
+Epoch 9/20
+1342/1342 [==============================] - 0s 19us/step - loss: 2465642737.1207
+Epoch 10/20
+1342/1342 [==============================] - 0s 21us/step - loss: 3381196714.9210
+Epoch 11/20
+1342/1342 [==============================] - 0s 21us/step - loss: 2808742274.8614
+Epoch 12/20
+1342/1342 [==============================] - 0s 21us/step - loss: 1925178630.6766
+Epoch 13/20
+1342/1342 [==============================] - 0s 22us/step - loss: 1585801051.5648
+Epoch 14/20
+1342/1342 [==============================] - 0s 24us/step - loss: 1508546626.6706
+Epoch 15/20
+1342/1342 [==============================] - 0s 21us/step - loss: 1248182839.8927
+Epoch 16/20
+1342/1342 [==============================] - 0s 28us/step - loss: 1021877933.8778
+Epoch 17/20
+1342/1342 [==============================] - 0s 21us/step - loss: 891773150.2355
+Epoch 18/20
+1342/1342 [==============================] - 0s 21us/step - loss: 783100265.1088
+Epoch 19/20
+1342/1342 [==============================] - 0s 15us/step - loss: 699741642.2057
+Epoch 20/20
+1342/1342 [==============================] - 0s 20us/step - loss: 608137635.0999
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>C:\Users\ossej\Anaconda3\lib\site-packages\sklearn\ensemble\bagging.py:398: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples, ), for example using ravel().
+  return column_or_1d(y, warn=True)
+C:\Users\ossej\OneDrive\Documents\Master 2 MODE\Machine Learning for Biology\projet\outilsRegc.py:67: DataConversionWarning: A column-vector y was passed when a 1d array was expected. Please change the shape of y to (n_samples,), for example using ravel().
+  self.rf = RandomForestRegressor(n_estimators = ntreeBag).fit(self.X, self.y)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Epoch 1/20
+1381/1381 [==============================] - 1s 409us/step - loss: 33044843769787.7812
+Epoch 2/20
+1381/1381 [==============================] - 0s 21us/step - loss: 25367646875959.4258
+Epoch 3/20
+1381/1381 [==============================] - 0s 19us/step - loss: 20139512409142.1289
+Epoch 4/20
+1381/1381 [==============================] - 0s 21us/step - loss: 14340395402805.7559
+Epoch 5/20
+1381/1381 [==============================] - 0s 16us/step - loss: 10017445314892.1875
+Epoch 6/20
+1381/1381 [==============================] - 0s 25us/step - loss: 7130424308272.5674
+Epoch 7/20
+1381/1381 [==============================] - 0s 20us/step - loss: 4955184231446.9863
+Epoch 8/20
+1381/1381 [==============================] - 0s 27us/step - loss: 2925852508954.8789
+Epoch 9/20
+1381/1381 [==============================] - 0s 17us/step - loss: 1858749936947.7190
+Epoch 10/20
+1381/1381 [==============================] - 0s 23us/step - loss: 1240319360762.9949
+Epoch 11/20
+1381/1381 [==============================] - 0s 16us/step - loss: 692163774438.7893
+Epoch 12/20
+1381/1381 [==============================] - 0s 17us/step - loss: 329710904879.8262
+Epoch 13/20
+1381/1381 [==============================] - 0s 15us/step - loss: 187148459326.0999
+Epoch 14/20
+1381/1381 [==============================] - 0s 15us/step - loss: 99498524654.2042
+Epoch 15/20
+1381/1381 [==============================] - 0s 18us/step - loss: 66518488137.4077
+Epoch 16/20
+1381/1381 [==============================] - 0s 17us/step - loss: 40537165468.0840
+Epoch 17/20
+1381/1381 [==============================] - 0s 22us/step - loss: 32080604893.3353
+Epoch 18/20
+1381/1381 [==============================] - 0s 21us/step - loss: 28266798273.5293
+Epoch 19/20
+1381/1381 [==============================] - 0s 19us/step - loss: 26885988618.9370
+Epoch 20/20
+1381/1381 [==============================] - 0s 19us/step - loss: 26223367638.8472
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXQAAAERCAYAAABrWly6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAADh0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uMy4xLjEsIGh0dHA6Ly9tYXRwbG90bGliLm9yZy8QZhcZAAAUxklEQVR4nO3df5BlZX3n8fcHhh9mNcE4nV3DEIeYQYMuatKCP8o4JEYHYsHGRcNoArjoJLViamPMBhdXCCS7UXY1cYUlU2ZqEmsF0fhjYjBodjFYCVg0CiMDC474g5bdnVYIiUbBwe/+cU+ba8/tvrdnbndPP/N+Vd3qe57nued8u2fm02eee89zUlVIkla/w1a6AEnSeBjoktQIA12SGmGgS1IjDHRJaoSBLkmNWNFAT7ItyZ4kd4ww9meSfCbJ3iRnzek7N8nnu8e5S1exJB28VvoMfTuwacSxXwHOA97b35jkh4GLgVOAk4GLkzx+fCVK0uqwooFeVTcCD/S3JXlykr9McmuSTyV5ajf2S1W1E/junN28BPhEVT1QVQ8Cn2D0XxKS1Iw1K13AAFuBX6uqzyc5BbgS+NkFxh8L3Ne3Pd21SdIh5aAK9CSPBZ4HvD/JbPNRw142oM31DCQdcg6qQKc3BfR3VfXMRbxmGtjYt70O+OQYa5KkVWGl3xT9PlX198AXk7wcID3PGPKy64EXJ3l892boi7s2STqkrPTHFq8GbgKekmQ6yfnAq4Dzk9wO7ALO7MY+O8k08HLgj5LsAqiqB4DLgFu6x6VdmyQdUuLyuZLUhoNqykWStP9W7E3RtWvX1vr161fq8JK0Kt16661fq6qJQX0rFujr169nampqpQ4vSatSki/P1+eUiyQ1wkCXpEYY6JLUCANdkhphoEtSIwx0SWqEgS5JjTDQJakRQwN9lPt+JtmY5LYku5L89XhLlCSNYpQz9O0scEu3JMfQu6vQGVX1NHqrIUoS8O0lGqtBhgb6oPt+zvFK4INV9ZVu/J4x1SZp1Tua3k3FRnkcvUI1tmMcc+gnAI9P8snuxs7nzDcwyZYkU0mmZmZmxnBoSdKscQT6GuCngV8AXgL8xyQnDBpYVVurarKqJicmBi4WJknaT+NYbXEa+FpVfRP4ZpIbgWcA94xh35KkEY3jDP0jwAuSrEnyA8ApwF1j2K8kaRGGnqF39/3cCKzt7ul5MXAEQFVdVVV3JflLYCfwXeDdVTXvRxwlSUtjaKBX1eYRxlwOXD6WiiRJ+8UrRSWpEQa6JDXCQJekRhjoktQIA12SGmGgS1IjDHRJaoSBLkmNMNAlqREGuiQ1wkCXpEYY6JLUCANdkhphoEtSIwx0SWqEgS5JjTDQJakRQwM9ybYke5IseFu5JM9O8miSs8ZXniRpVKOcoW8HNi00IMnhwFuB68dQkyRpPwwN9Kq6EXhgyLDXA38G7BlHUZKkxTvgOfQkxwK/CFw1wtgtSaaSTM3MzBzooSVJfcbxpugfAL9dVY8OG1hVW6tqsqomJyYmxnBoSdKsNWPYxyRwTRKAtcDpSfZW1YfHsG9J0ogOONCr6vjZ50m2Ax81zCVp+Q0N9CRXAxuBtUmmgYuBIwCqaui8uSRpeQwN9KraPOrOquq8A6pGkrTfvFJUkhphoEtSIwx0SWqEgS5JjTDQJakRBrokNcJAl6RGGOiS1AgDXZIaYaBLUiMMdElqhIEuSY0w0CWpEQa6JDXCQJekRhjoktSIoYGeZFuSPUnumKf/VUl2do+/TfKM8ZcpSRpmlDP07cCmBfq/CLywqk4CLgO2jqEuSdIijXILuhuTrF+g/2/7Nm8G1h14WZKkxRr3HPr5wMfm60yyJclUkqmZmZkxH1qSDm1jC/Qkp9IL9N+eb0xVba2qyaqanJiYGNehJUmMMOUyiiQnAe8GTquqr49jn5KkxTngM/QkPwZ8EPiVqrrnwEuSJO2PoWfoSa4GNgJrk0wDFwNHAFTVVcBbgCcAVyYB2FtVk0tVsCRpsFE+5bJ5SP9rgNeMrSJJ0n7xSlFJaoSBLkmNMNAlqREGuiQ1wkCXpEYY6JLUCANdkhphoEtSIwx0SWqEgS5JjTDQJakRBrokNcJAl6RGGOiS1AgDXZIaYaBLUiMMdElqxNBAT7ItyZ4kd8zTnyTvTLI7yc4kPzX+MiVJw4xyhr4d2LRA/2nAhu6xBfjvB16WJGmxhgZ6Vd0IPLDAkDOBP62em4FjkjxxXAVKkkYzjjn0Y4H7+ranu7Z9JNmSZCrJ1MzMzBgOLUmaNY5Az4C2GjSwqrZW1WRVTU5MTIzh0JKkWeMI9GnguL7tdcD9Y9ivJGkRxhHoO4Bzuk+7PAd4qKr+zxj2K0lahDXDBiS5GtgIrE0yDVwMHAFQVVcB1wGnA7uBfwRevVTFSpLmNzTQq2rzkP4CXje2iiRJ+8UrRSWpEQa6JDXCQJekRhjoktQIA12SGmGgS1IjDHRJaoSBLkmNMNAlqREGuiQ1wkCXpEYY6JLUCANdkhphoEtSIwx0SWqEgS5JjRgp0JNsSnJ3kt1JLhzQ/2NJbkjy2SQ7k5w+/lIlSQsZGuhJDgeuAE4DTgQ2JzlxzrA3A9dW1bOAs4Erx12oJGlho5yhnwzsrqp7q+oR4BrgzDljCvjB7vkPAfePr0RJ0ihGCfRjgfv6tqe7tn6XAL/c3UT6OuD1g3aUZEuSqSRTMzMz+1GuJGk+owR6BrTVnO3NwPaqWgecDrwnyT77rqqtVTVZVZMTExOLr1aSNK9RAn0aOK5vex37TqmcD1wLUFU3AUcDa8dRoCRpNKME+i3AhiTHJzmS3pueO+aM+QrwcwBJfpJeoDunIknLaGigV9Ve4ALgeuAuep9m2ZXk0iRndMN+E3htktuBq4HzqmrutIwkaQmtGWVQVV1H783O/ra39D2/E3j+eEuTJC2GV4pKUiMMdElqhIEuSY0w0CWpEQa6JDXCQJekRhjoktQIA12SGmGgS1IjDHRJaoSBLkmNMNAlqREGuiQ1wkCXpEYY6JLUCANdkhphoEtSI0YK9CSbktydZHeSC+cZ84okdybZleS94y1TkjTM0FvQJTkcuAL4eWAauCXJju62c7NjNgBvAp5fVQ8m+ZGlKliSNNgoZ+gnA7ur6t6qegS4BjhzzpjXAldU1YMAVbVnvGVKkoYZJdCPBe7r257u2vqdAJyQ5G+S3Jxk06AdJdmSZCrJ1MzMzP5VLEkaaJRAz4C2mrO9BtgAbAQ2A+9Ocsw+L6raWlWTVTU5MTGx2FolSQsYJdCngeP6ttcB9w8Y85Gq+k5VfRG4m17AS5KWySiBfguwIcnxSY4EzgZ2zBnzYeBUgCRr6U3B3DvOQiVJCxsa6FW1F7gAuB64C7i2qnYluTTJGd2w64GvJ7kTuAH4rar6+lIVLUnaV6rmTocvj8nJyZqamlqRY0taToPehhtkZbJotUlya1VNDurzSlFJaoSBLkmNMNAlqREGuiQ1wkCXpEYY6JLUCANdkhphoEtSIwx0SWqEgS5JjTDQJakRBrokNcJAl6RGGOiS1AgDXZIaYaBLUiNGCvQkm5LcnWR3kgsXGHdWkkoycPF1SdLSGRroSQ4HrgBOA04ENic5ccC4xwG/Dnx63EVKkoYb5Qz9ZGB3Vd1bVY8A1wBnDhh3GfA24NtjrE+SNKJRAv1Y4L6+7emu7XuSPAs4rqo+OsbaJEmLMEqgD7rD6/fu5prkMOAdwG8O3VGyJclUkqmZmZnRq5QkDTVKoE8Dx/VtrwPu79t+HPB04JNJvgQ8B9gx6I3RqtpaVZNVNTkxMbH/VUuS9jFKoN8CbEhyfJIjgbOBHbOdVfVQVa2tqvVVtR64GTijqqaWpGJJTXrkOw8v6fhDwZphA6pqb5ILgOuBw4FtVbUryaXAVFXtWHgPkjTckUccxSsuOWnk8ddesnMJq1mdhgY6QFVdB1w3p+0t84zdeOBlSZIWyytFJakRBrokNcJAl6RGGOiS1AgDXZIaYaBLUiMMdElqhIEuSY0w0CWpEQa6JDXCQJekRhjoktQIA12SGmGgS1IjDHRJaoSBLkmNMNAlqREjBXqSTUnuTrI7yYUD+t+Q5M4kO5P8zyRPGn+pkqSFDA30JIcDVwCnAScCm5OcOGfYZ4HJqjoJ+ADwtnEXKkla2Chn6CcDu6vq3qp6BLgGOLN/QFXdUFX/2G3eDKwbb5mSpGFGCfRjgfv6tqe7tvmcD3xsUEeSLUmmkkzNzMyMXqUkaahRAj0D2mrgwOSXgUng8kH9VbW1qiaranJiYmL0KiVJQ60ZYcw0cFzf9jrg/rmDkrwIuAh4YVU9PJ7yJEmjGuUM/RZgQ5LjkxwJnA3s6B+Q5FnAHwFnVNWe8ZcpSRpmaKBX1V7gAuB64C7g2qraleTSJGd0wy4HHgu8P8ltSXbMsztJ0hIZZcqFqroOuG5O21v6nr9ozHVJkhbJK0UlqREGuiQ1wkCXpEYY6JLUCANdkhphoEtSIwx0SWqEgS5JjTDQJakRBrokNcJAl6RGGOiS1AgDXZIaYaBLUiMMdEnax7eXePzSGGk9dEk6tBzN4Nspz2fgbZaXnWfoktSIkQI9yaYkdyfZneTCAf1HJXlf1//pJOvHXagkaWFDAz3J4cAVwGnAicDmJCfOGXY+8GBV/QTwDuCt4y5Ukg5Wj3zn4SUdP6pR5tBPBnZX1b0ASa4BzgTu7BtzJnBJ9/wDwLuSpKoOjoklSVpCRx5xFK+45KSRx197yc4lqWOUQD8WuK9vexo4Zb4xVbU3yUPAE4Cv9Q9KsgXY0m1+I8nd+1P0GK1lTo2riLUvv9VaN6yK2ud9E3Jg7fmdxbxpudSWtfYnzdcxSqAPOvLcM+9RxlBVW4GtIxxzWSSZqqrJla5jf1j78lutdYO1r5Tlrn2UN0WngeP6ttcB9883Jska4IeAB8ZRoCRpNKME+i3AhiTHJzkSOBvYMWfMDuDc7vlZwP9y/lySltfQKZduTvwC4HrgcGBbVe1KcikwVVU7gD8G3pNkN70z87OXsugxOmimf/aDtS+/1Vo3WPtKWdba44m0JLXBK0UlqREGuiQ1otlAT/JoktuS7Epye5I3JDms65tM8s4FXrs+ySuXr9qF9X0vdyT58yTHdO3rk9yxwrU9oavttiT/N8lX+7Zrgbq/1TfutiTndH1fSvK5vvZ5/5yW8Hua/XnfnuQzSZ7X17chyUeTfCHJrUluSPIzy13jnHoryXv6ttckmUny0W77vCTvGvC62Z/17Uk+nuRfLGfd80lyUffvdmf353BD93V3kof6/m48b/jeDjFV1eQD+Ebf8x8B/gr4nRFfuxH46Ep/D/N8L38CXNQ9Xw/csdL19dV2CfDGA6kb+BKw9iD6eb8E+Ovu+dHAPcAZff1PB85b6XqBzwKP6bZPA26b/TsMnAe8a6GfNfCfgHceBH+HngvcBBzVba8FfrR7flD9uzwYH82eoferqj30rlC9ID0b+85eXtj3G/+zSR4H/D7wgq7tN1ay9gFuondl7mqzWuv+QeDB7vmrgJuq98kuAKrqjqravhKFzfEx4Be655uBqxf5+huBnxhrRfvnicDXquphgKr6WlXNve5F8zgkAh2gemvRHEbvbL3fG4HXVdUzgRcA3wIuBD5VVc+sqncsb6Xz6xZK+zn2vQ7goDZP3U+eM+Xygr6+G/raV+IX6mO6Y/9v4N3AZV3704DPrEA9o7gGODvJ0cBJwKcX+fqXAp8be1WL93HguCT3JLkyyQtXuqDV5FC7wcWgJQr+Bnh7kv8BfLCqppODaY0IoAsYelMVtwKfWNlyRrZQ3V/ofokOcmpVreS6I9+arS3Jc4E/TfL0uYOSfAjYANxTVS9b5hq/T1XtTG/Z6s3AdYt46Q1JHgV2Am9egtIWpaq+keSn6Z1cnQq8L8mFB8n/gg56h8wZepIfBx4F9vS3V9XvA68BHgPcnOSpK1DeMLMB8yTgSOB1K1zPqFZr3d9TVTfRm8edAHYBP9XX94v05qd/eEWK29cO4L+wuOmWU7v/iZ5TVX+3RHUtSlU9WlWfrKqLgQuAf73SNa0Wh0SgJ5kArqL3xlDN6XtyVX2uqt4KTAFPBf4BeNzyV7qwqnoI+HXgjUmOWOl6RrVa6wbofsEfDnwdeC/w/CRn9A35gRUpbLBtwKVVdTBMneyXJE9JsqGv6ZnAl1eqntWm5SmX2f/uHwHsBd4DvH3AuH+X5FR6Z+930ntz6bvA3iS3A9sPpnn0qvpsV9fZwKeApySZ7hvyG1X1/pWpbn4D6n5y9+cza1tVzX5EcXYaAGBnVZ2znLXyT393oDdNd25VPQp8K8lL6U3R/QHw/+j98v/dZa5voKqaBv5wnu7zkvyrvu3nLENJ++OxwH/rPuK6F9jNPy25rSG89F+SGnFITLlI0qHAQJekRhjoktQIA12SGmGgS/NI8i+T/PvV9lFLHboMdK1a3aqN1T3e3Ne+bbZ9kfu7o/813ee5C/jj9F0+nOSSbv9njeP7kMbFQFcrXt0tvPbPgJePa6dVdXl3FaWf79VBz0BXC+4Ffpze8qq/RO9isq8CdCF/UZIvJ/mHbm3tp3V9xyT5iyQPJtneve57krwpyRe71/1VkhMGHTzJS7s1xb/ZfX1R1/6UJJ9Ob+33B5PcuFQ/AAkMdLXhLnqrC/6b7vFhYHZdklfTu5JzJ3AR8GzgI928+MXA6cD76f0C+F5gJzmX3hrhn6S3+uZPAh+Ye+Au5P+M3iqdvws8DHwoyROBfwucDPwH4E3AV8b3LUv7avnSfx1atgHvBI4CNgH/tWs/vfv6hqr6fJJTgFfSC++N9JZ5uKCqHknvrknruvEv7b7+Svc4DPjRJGvnHPfn6S08dkr3mPVc4PPd8xcDtzD/ZfnSWBjoasU1wDuAaQYvLzzfHHh/ewY8Px2YvcHCEcBDc14/O+5tc457V1V9NcldwAuBM4GLkpxYVXcv9I1I+8spFzWhqv6e3nTLr1bVd/u6/qL7+vYkrwfOAL5A71ZyN9BbSfFdSX6P77+j0p93X3+L3rTJq4Crquo7cw79ceAR4GXA8cCzgP8MHJHk1+idqe/uHocB//zAv1tpMM/Q1Yyqet+A5u30gvq1wM/Sm/q4oKq+k+Qyessl/xLwIXpTJBu6ff1JejdN/lXgSnpn/vvsv6ruSfIyevPnf0hv7v5Gerete4TeHP46eqsyXkHvhirSknC1RUlqhFMuktQIA12SGmGgS1IjDHRJaoSBLkmNMNAlqREGuiQ14v8DTQo4PfuCXGsAAAAASUVORK5CYII=
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
